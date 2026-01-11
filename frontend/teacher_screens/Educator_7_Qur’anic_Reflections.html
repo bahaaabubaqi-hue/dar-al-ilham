@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>وقفات التدبر - المربي | دار الإلهام</title><meta name="description" content="إدارة وقفات التدبر القرآنية في دار الإلهام"><meta name="keywords" content="وقفات التدبر، القرآن الكريم، دار الإلهام"><meta property="og:title" content="وقفات التدبر - المربي"><meta property="og:description" content="إدارة وقفات التدبر القرآنية"><meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ade80",
+                        "primary-dark": "#22c55e",
+                        "primary-light": "#f3e7ed",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102220",
+                        "text-main": "#0d1b1a",
+                        "text-muted": "#5a7a78",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Sans Arabic", "Manrope", "sans-serif"],
+                        "body": ["Noto Sans Arabic", "Manrope", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(236, 19, 128, 0.05)",
+                        "card": "0 0 0 1px rgba(243, 231, 237, 0.5), 0 2px 8px rgba(0, 0, 0, 0.02)",
+                        "card-hover": "0 0 0 1px rgba(236, 19, 128, 0.1), 0 8px 24px -4px rgba(236, 19, 128, 0.12)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans Arabic', 'Manrope', sans-serif;
+        }.toggle-checkbox:checked {
+            right: 0;
+            border-color: #4ade80;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #4ade80;
+        }
+        .toggle-checkbox:checked + .toggle-label:before {
+            transform: translateX(-100%);
+        }::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e7eb; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d1d5db; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main overflow-hidden w-full h-screen flex flex-row">
+<aside class="w-72 h-full flex flex-col bg-white border-l border-[#f3e7ed] shrink-0 z-20">
+<div class="p-8 flex items-center gap-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-2xl size-12 shadow-sm shrink-0" data-alt="Dar Al-Ilham Logo placeholder abstract pink shape" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-main text-xl font-extrabold leading-tight tracking-tight">دار الإلهام</h1>
+<p class="text-text-secondary text-xs font-medium mt-0.5">لوحة تحكم المشرف</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2 px-5 py-4 overflow-y-auto">
+<a class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl hover:bg-primary-light/50 group transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-text-main font-semibold text-sm group-hover:text-primary transition-colors">لوحة التحكم</span>
+</a>
+<a class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl bg-gradient-to-r from-primary/10 to-transparent text-primary transition-all duration-200 shadow-sm border-r-4 border-primary" href="#">
+<span class="material-symbols-outlined fill-1">menu_book</span>
+<span class="font-bold text-sm">الوقفات القرآنية</span>
+</a>
+<a class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl hover:bg-primary-light/50 group transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">groups</span>
+<span class="text-text-main font-semibold text-sm group-hover:text-primary transition-colors">الطلاب</span>
+</a>
+<a class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl hover:bg-primary-light/50 group transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">school</span>
+<span class="text-text-main font-semibold text-sm group-hover:text-primary transition-colors">الحلقات</span>
+</a>
+<div class="my-4 border-t border-dashed border-[#f3e7ed]"></div>
+<a class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl hover:bg-primary-light/50 group transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">settings</span>
+<span class="text-text-main font-semibold text-sm group-hover:text-primary transition-colors">الإعدادات</span>
+</a>
+<a class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl hover:bg-primary-light/50 group transition-all duration-200 mt-auto" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">logout</span>
+<span class="text-text-main font-semibold text-sm group-hover:text-primary transition-colors">تسجيل الخروج</span>
+</a>
+</nav>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden relative bg-background-light">
+<header class="h-20 bg-white/80 backdrop-blur-md border-b border-[#f3e7ed] flex items-center justify-end px-8 shrink-0 z-10 sticky top-0">
+<div class="flex items-center gap-4">
+<button class="relative p-2.5 text-text-secondary hover:text-primary hover:bg-primary-light rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 left-2.5 size-2 bg-primary rounded-full border border-white ring-2 ring-white"></span>
+</button>
+<div class="h-8 w-px bg-gray-100 mx-1"></div>
+<div class="flex items-center gap-3 pl-2 hover:bg-gray-50 rounded-2xl p-1.5 pr-2 cursor-pointer transition-colors border border-transparent hover:border-gray-100">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 ring-2 ring-primary/10" data-alt="Profile picture of the admin user" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="hidden md:flex flex-col items-start">
+<span class="text-sm font-bold text-text-main">عبد الله أحمد</span>
+<span class="text-xs text-text-secondary font-medium">مشرف عام</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-sm">expand_more</span>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-[1400px] mx-auto flex flex-col gap-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl font-black text-text-main tracking-tight">إسناد الوقفات القرآنية</h1>
+<p class="text-text-secondary mt-2 text-base font-medium max-w-2xl leading-relaxed">قم بتعيين الوقفات القرآنية المناسبة لكل حلقة دراسية لتظهر للطلاب بشكل منتظم وميسر.</p>
+</div>
+</div>
+<div class="bg-white p-2 rounded-[2rem] shadow-soft border border-white flex flex-col lg:flex-row items-center gap-3 sticky top-0 z-0">
+<div class="w-full lg:w-72 relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+<button class="w-full flex items-center justify-between bg-background-light border-2 border-transparent hover:border-primary/10 hover:bg-white rounded-full px-6 py-3.5 text-text-main transition-all text-right shadow-sm group-hover:shadow-md">
+<div class="flex flex-col items-start gap-0.5">
+<span class="text-[10px] font-bold text-primary uppercase tracking-wider">الحلقة الحالية</span>
+<span class="font-bold text-sm truncate">حلقة أبو بكر الصديق - المستوى الأول</span>
+</div>
+</button>
+</div>
+<div class="h-10 w-px bg-gray-100 hidden lg:block mx-1"></div>
+<div class="relative flex-1 w-full">
+<div class="absolute inset-y-0 right-0 flex items-center pr-5 pointer-events-none">
+<span class="material-symbols-outlined text-text-secondary text-xl">search</span>
+</div>
+<input class="w-full bg-gray-50/80 border-0 rounded-full py-3.5 pr-12 pl-4 text-sm text-text-main placeholder-text-secondary/60 focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all shadow-inner" placeholder="ابحث عن وقفة قرآنية..." type="text"/>
+</div>
+<div class="flex items-center gap-2 w-full lg:w-auto overflow-x-auto no-scrollbar">
+<button class="flex items-center gap-2 px-5 py-3.5 bg-white border border-gray-100 text-text-secondary rounded-full text-sm font-bold hover:bg-primary-light/30 hover:text-primary hover:border-primary/20 transition-all shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+<span>تصفية</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-3.5 bg-white border border-gray-100 text-text-secondary rounded-full text-sm font-bold hover:bg-primary-light/30 hover:text-primary hover:border-primary/20 transition-all shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-lg">sort</span>
+<span>ترتيب</span>
+</button>
+</div>
+<button class="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white pl-6 pr-5 py-3.5 rounded-full font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all transform hover:-translate-y-0.5 w-full lg:w-auto min-w-fit">
+<span class="material-symbols-outlined text-xl">add_circle</span>
+<span>إضافة حلقة جديدة</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-10">
+<div class="group bg-white rounded-[2rem] border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col relative">
+<div class="relative aspect-[4/3] overflow-hidden m-2 rounded-[1.5rem]">
+<div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" data-alt="Abstract artistic representation of an elephant for Surah Al-Fil" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-primary/10">جزء ٣٠</div>
+</div>
+<div class="px-6 pb-6 pt-2 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main line-clamp-1 mb-2 group-hover:text-primary transition-colors">تدبر سورة الفيل</h3>
+<p class="text-text-secondary text-sm line-clamp-2 mb-6 leading-relaxed">وقفات تربوية وإيمانية من سورة الفيل وقصة أصحاب الفيل.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-dashed border-gray-100">
+<span class="text-xs font-bold text-primary bg-primary-light px-2.5 py-1 rounded-lg">مفعل</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+</div>
+</div>
+<div class="group bg-white rounded-[2rem] border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col relative">
+<div class="relative aspect-[4/3] overflow-hidden m-2 rounded-[1.5rem]">
+<div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" data-alt="Close up of a fountain pen writing on paper for Surah Al-Qalam" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-text-secondary shadow-sm border border-gray-100">جزء ٢٩</div>
+</div>
+<div class="px-6 pb-6 pt-2 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main line-clamp-1 mb-2 group-hover:text-primary transition-colors">تدبر سورة القلم</h3>
+<p class="text-text-secondary text-sm line-clamp-2 mb-6 leading-relaxed">دروس مستفادة من قصة أصحاب الجنة وقيمة الصبر.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-dashed border-gray-100">
+<span class="text-xs font-bold text-gray-400 bg-gray-50 px-2.5 py-1 rounded-lg">غير مفعل</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+</div>
+</div>
+<div class="group bg-white rounded-[2rem] border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col relative">
+<div class="relative aspect-[4/3] overflow-hidden m-2 rounded-[1.5rem]">
+<div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" data-alt="Texture of palm fiber rope for Surah Al-Masad" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-text-secondary shadow-sm border border-gray-100">جزء ٣٠</div>
+</div>
+<div class="px-6 pb-6 pt-2 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main line-clamp-1 mb-2 group-hover:text-primary transition-colors">تدبر سورة المسد</h3>
+<p class="text-text-secondary text-sm line-clamp-2 mb-6 leading-relaxed">العبرة من عاقبة أبي لهب وزوجته والتحذير من الظلم.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-dashed border-gray-100">
+<span class="text-xs font-bold text-gray-400 bg-gray-50 px-2.5 py-1 rounded-lg">غير مفعل</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+</div>
+</div>
+<div class="group bg-white rounded-[2rem] border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col relative">
+<div class="relative aspect-[4/3] overflow-hidden m-2 rounded-[1.5rem]">
+<div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" data-alt="Open Quran book in soft lighting for Surah Al-Fatiha" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-primary/10">جزء ١</div>
+</div>
+<div class="px-6 pb-6 pt-2 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main line-clamp-1 mb-2 group-hover:text-primary transition-colors">تدبر سورة الفاتحة</h3>
+<p class="text-text-secondary text-sm line-clamp-2 mb-6 leading-relaxed">أسرار السبع المثاني وفضائل أم الكتاب.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-dashed border-gray-100">
+<span class="text-xs font-bold text-primary bg-primary-light px-2.5 py-1 rounded-lg">مفعل</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+</div>
+</div>
+<div class="group bg-white rounded-[2rem] border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col relative">
+<div class="relative aspect-[4/3] overflow-hidden m-2 rounded-[1.5rem]">
+<div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" data-alt="Abstract islamic geometric art pattern for Surah Al-Ikhlas" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-text-secondary shadow-sm border border-gray-100">جزء ٣٠</div>
+</div>
+<div class="px-6 pb-6 pt-2 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main line-clamp-1 mb-2 group-hover:text-primary transition-colors">تدبر سورة الإخلاص</h3>
+<p class="text-text-secondary text-sm line-clamp-2 mb-6 leading-relaxed">التوحيد الخالص وصفات الله عز وجل في هذه السورة العظيمة.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-dashed border-gray-100">
+<span class="text-xs font-bold text-gray-400 bg-gray-50 px-2.5 py-1 rounded-lg">غير مفعل</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+</div>
+</div>
+<div class="group bg-white rounded-[2rem] border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col relative">
+<div class="relative aspect-[4/3] overflow-hidden m-2 rounded-[1.5rem]">
+<div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" data-alt="Sunrise over water representing the dawn for Surah Al-Falaq" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-text-secondary shadow-sm border border-gray-100">جزء ٣٠</div>
+</div>
+<div class="px-6 pb-6 pt-2 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main line-clamp-1 mb-2 group-hover:text-primary transition-colors">تدبر سورة الفلق</h3>
+<p class="text-text-secondary text-sm line-clamp-2 mb-6 leading-relaxed">الاستعاذة بالله من شر ما خلق ومن شر غاسق إذا وقب.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-dashed border-gray-100">
+<span class="text-xs font-bold text-gray-400 bg-gray-50 px-2.5 py-1 rounded-lg">غير مفعل</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+</div>
+</div>
+<div class="group bg-white rounded-[2rem] border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col relative">
+<div class="relative aspect-[4/3] overflow-hidden m-2 rounded-[1.5rem]">
+<div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" data-alt="Silhouette of people walking representing mankind for Surah An-Nas" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-text-secondary shadow-sm border border-gray-100">جزء ٣٠</div>
+</div>
+<div class="px-6 pb-6 pt-2 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main line-clamp-1 mb-2 group-hover:text-primary transition-colors">تدبر سورة الناس</h3>
+<p class="text-text-secondary text-sm line-clamp-2 mb-6 leading-relaxed">التحصن بالله ملك الناس وإله الناس من الوسواس الخناس.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-dashed border-gray-100">
+<span class="text-xs font-bold text-gray-400 bg-gray-50 px-2.5 py-1 rounded-lg">غير مفعل</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+</div>
+</div>
+<div class="group bg-white rounded-[2rem] border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col relative">
+<div class="relative aspect-[4/3] overflow-hidden m-2 rounded-[1.5rem]">
+<div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" data-alt="River flowing peacefully representing Al-Kawthar" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-primary/10">جزء ٣٠</div>
+</div>
+<div class="px-6 pb-6 pt-2 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main line-clamp-1 mb-2 group-hover:text-primary transition-colors">تدبر سورة الكوثر</h3>
+<p class="text-text-secondary text-sm line-clamp-2 mb-6 leading-relaxed">فضل الله العظيم على نبيه ﷺ ونهر الكوثر.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-dashed border-gray-100">
+<span class="text-xs font-bold text-primary bg-primary-light px-2.5 py-1 rounded-lg">مفعل</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shadow-sm"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pb-8 pt-4 border-t border-gray-100">
+<p class="text-sm font-medium text-text-secondary">عرض 1-8 من 42 وقفة</p>
+<div class="flex gap-2">
+<button class="size-10 flex items-center justify-center rounded-xl border border-gray-200 bg-white text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all disabled:opacity-50">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-xl bg-primary text-white shadow-md shadow-primary/30 transition-all font-bold">1</button>
+<button class="size-10 flex items-center justify-center rounded-xl border border-gray-200 bg-white text-text-secondary hover:bg-primary-light hover:text-primary hover:border-primary/20 transition-all font-medium">2</button>
+<button class="size-10 flex items-center justify-center rounded-xl border border-gray-200 bg-white text-text-secondary hover:bg-primary-light hover:text-primary hover:border-primary/20 transition-all font-medium">3</button>
+<span class="flex items-end justify-center px-2 text-text-secondary pb-2">...</span>
+<button class="size-10 flex items-center justify-center rounded-xl border border-gray-200 bg-white text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<script src="../assets/js/main.js"></script>`n</body></html>
+
+

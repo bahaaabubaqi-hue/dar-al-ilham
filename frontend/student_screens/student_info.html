@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dar Al-Ilham - Student Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ade80",
+                        "primary-dark": "#22c55e",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102220",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2c2a",
+                        "text-main": "#0d1b1a",
+                        "text-sub": "#4c9a93",
+                        "neutral-border": "#e7ebf3",
+                        "text-muted": "#4c669a",
+                        "success-bg": "#d1fae5",
+                        "success-text": "#065f46",
+                        "warning-bg": "#fef3c7",
+                        "warning-text": "#92400e",
+                        "surface": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["'Noto Sans Arabic'", "Lexend", "sans-serif"],
+                        "body": ["'Noto Sans Arabic'", "Lexend", "sans-serif"],
+                        "sans": ["'Noto Sans Arabic'", "Lexend", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "3xl": "2.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'card': '0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        body {
+            font-feature-settings: "ss01", "ss02";
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-text-main antialiased min-h-screen flex flex-col transition-colors duration-200">
+<header class="sticky top-0 z-50 w-full h-20 border-b border-[#e7f3f2] bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-sm px-4 lg:px-40 shadow-sm transition-colors duration-200">
+    <div class="max-w-[1280px] mx-auto h-full flex items-center justify-between gap-8">
+        <!-- العنوان على اليمين -->
+        <div class="flex items-center gap-3 shrink-0">
+            <div class="h-10 w-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary-dark">
+                <span class="material-symbols-outlined text-2xl">mosque</span>
+            </div>
+            <h2 class="text-text-main dark:text-white text-xl font-bold tracking-tight">دار الإلهام</h2>
+        </div>
+        
+        <!-- الأزرار الثلاثة في الوسط -->
+        <nav class="flex items-center gap-6" role="navigation" aria-label="القائمة الرئيسية">
+            <a class="text-text-sub dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary text-sm font-medium transition-colors shrink-0 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="student_Learning_Paths_1.html">
+                <span class="material-symbols-outlined text-lg">alt_route</span>
+                <span>المسارات</span>
+            </a>
+            <a class="text-text-sub dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary text-sm font-medium transition-colors shrink-0 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="student_Progress_Dashboard.html">
+                <span class="material-symbols-outlined text-lg">monitoring</span>
+                <span>لوحة التقدم</span>
+            </a>
+            <a class="text-text-main dark:text-white text-sm font-bold border-b-2 border-primary pb-0.5 shrink-0 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="student_info.html">
+                <span class="material-symbols-outlined text-lg">person</span>
+                <span>الملف الشخصي</span>
+            </a>
+        </nav>
+        
+        <!-- زر تسجيل الخروج على أقصى اليسار -->
+        <div class="flex items-center gap-4 shrink-0">
+            <button id="notificationsBtn" class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-text-main dark:text-white transition-colors relative" aria-label="الإشعارات">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button id="logoutBtn" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 text-sm font-medium transition-colors" aria-label="تسجيل الخروج" title="تسجيل الخروج">
+                <span class="material-symbols-outlined text-lg">logout</span>
+                <span class="inline">تسجيل الخروج</span>
+            </button>
+        </div>
+    </div>
+</header>
+<main class="flex-1 px-4 lg:px-40 py-8">
+    <div class="max-w-[1280px] mx-auto flex flex-col gap-8">
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-soft border border-neutral-border/50 relative overflow-hidden flex flex-col justify-center">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-primary/5 pointer-events-none"></div>
+<div class="absolute -left-10 -top-10 size-40 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-6">
+<div class="size-20 rounded-2xl bg-cover bg-center shadow-md border-4 border-white dark:border-gray-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAY-6gPRh-lG2NPX4Vw_u7flEoDjhRbYwckKM-ZYQsah7gszgUYDuFEARSq8KIMhJ7MgM905rJH5SvC0ROOJ13X7J20tu1e8NxcvsgmXSRyuEeNGCh84RIzILzvBpDtRRm3gNAms_SsENzwE-qVWsNrsf8OmvHl0GU4zRimd4c9nKUgF3i2ArBEjPKDPfIg7EkBWlAN-3M1GVS9gLGez6ajIZwsRTwZ5mVarKxKZuT2WUJ0umJCsHot1rBGgygsThk-oDBw7X_OLvU");'></div>
+<div class="flex flex-col gap-2">
+<h2 class="text-2xl md:text-3xl font-bold text-text-main dark:text-white">أهلاً بك 👋</h2>
+<p class="text-text-muted text-base">يوم جديد، همة عالية! لديك 3 مهام جديدة بانتظارك اليوم.</p>
+</div>
+</div>
+<div class="relative z-10 mt-8 flex flex-wrap gap-4">
+<div class="flex items-center gap-2 px-4 py-2 bg-background-light dark:bg-gray-700/50 rounded-xl text-sm text-text-main">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_today</span>
+<span>12 ربيع الآخر 1445</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-background-light dark:bg-gray-700/50 rounded-xl text-sm text-text-main">
+<span class="material-symbols-outlined text-warning-text text-[20px]">light_mode</span>
+<span>صلاة الظهر بعد 15 دقيقة</span>
+</div>
+</div>
+</div>
+<div class="bg-primary text-white rounded-3xl p-8 shadow-lg shadow-primary/20 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+<div class="relative z-10 flex items-center justify-between mb-4">
+<h3 class="font-bold text-lg opacity-90">إنجازك العام</h3>
+<span class="material-symbols-outlined opacity-70">trending_up</span>
+</div>
+<div class="relative z-10 flex flex-col gap-1 mb-6">
+<span class="text-4xl font-bold">85%</span>
+<span class="text-sm opacity-80">تقدم ممتاز، استمر!</span>
+</div>
+<div class="relative z-10 w-full bg-black/20 rounded-full h-3 overflow-hidden">
+<div class="bg-white h-full rounded-full w-[85%] shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
+</div>
+<div class="relative z-10 mt-6 pt-4 border-t border-white/20 flex justify-between text-sm">
+<div class="flex flex-col">
+<span class="opacity-70 text-xs">النقاط</span>
+<span class="font-bold text-lg">1,240</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="opacity-70 text-xs">الأوسمة</span>
+<span class="font-bold text-lg">12</span>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-8 flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+                            تابع التعلم
+                        </h3>
+<a class="text-sm font-medium text-primary hover:text-primary-dark transition-colors" href="#">عرض الجدول</a>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-soft border border-neutral-border/50 hover:shadow-md transition-all duration-300 group cursor-pointer">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-48 h-32 md:h-auto shrink-0 rounded-2xl bg-cover bg-center relative overflow-hidden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmkciLo5LwN8HlMkTbgfOkUqD4TOPlHtfMXZ7bNgqJ16FX8pd7PW_jTn51WWvxBOLpKAeDOhm7nmWxhurV30eCx-ITS_eaQnu1GazLG1sO5kd7l5cMhzG4PhrQTVOie9HRJ7br7SySZd9DB3y5McqXMcoLl65FNA7UxkRYnXwTC72i8ftWqRtSkym9zoNXZOLKpmUEbxm7evTuP-pkRNlX3jXsgcUay_wPy1c1o-lKUvUjorZxiU5PkM-zD1v7Lbf88MS6KKqYeKA");'>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[28px] translate-x-0.5">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-center flex-1 gap-3">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-600 text-xs font-bold">القرآن الكريم</span>
+<span class="text-text-muted text-xs">•</span>
+<span class="text-text-muted text-xs font-medium">تبقى 15 دقيقة</span>
+</div>
+<h4 class="text-xl font-bold text-text-main dark:text-white">سورة الرحمن - الآيات 1-10</h4>
+<p class="text-sm text-text-muted line-clamp-1">تلاوة وتفسير الآيات الأولى مع التركيز على أحكام المد.</p>
+<div class="flex items-center gap-4 mt-1">
+<div class="flex-1 h-2 bg-neutral-border rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[45%]"></div>
+</div>
+<span class="text-xs font-bold text-primary whitespace-nowrap">45% مكتمل</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">grid_view</span>
+                            الأنشطة الأخيرة
+                        </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<a class="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow-sm border border-neutral-border/50 hover:border-primary/30 transition-all group flex items-start gap-4" href="#">
+<div class="size-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0 group-hover:bg-orange-100 transition-colors">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<div class="flex flex-col gap-1">
+<h5 class="font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">الواجبات المنزلية</h5>
+<p class="text-xs text-text-muted">تم تسليم واجب الفقه بنجاح</p>
+<span class="text-[10px] text-text-muted/70 mt-1">منذ ساعتين</span>
+</div>
+</a>
+<a class="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow-sm border border-neutral-border/50 hover:border-primary/30 transition-all group flex items-start gap-4" href="#">
+<div class="size-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-100 transition-colors">
+<span class="material-symbols-outlined text-[24px]">emoji_events</span>
+</div>
+<div class="flex flex-col gap-1">
+<h5 class="font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">إنجاز جديد</h5>
+<p class="text-xs text-text-muted">حصلت على وسام "المواظب"</p>
+<span class="text-[10px] text-text-muted/70 mt-1">بالأمس</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-soft border border-neutral-border/50">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-lg text-text-main dark:text-white">مهام قادمة</h3>
+<button class="size-8 rounded-full hover:bg-neutral-border/50 flex items-center justify-center text-text-muted transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-3 p-3 rounded-xl hover:bg-background-light transition-colors cursor-pointer group">
+<div class="mt-1">
+<div class="size-5 rounded-md border-2 border-neutral-border group-hover:border-primary transition-colors flex items-center justify-center"></div>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<span class="text-sm font-bold text-text-main dark:text-white decoration-primary/30 group-hover:text-primary transition-colors">مراجعة الجزء الثلاثون</span>
+<div class="flex items-center gap-2">
+<span class="text-xs text-text-muted bg-neutral-100 dark:bg-gray-700 px-2 py-0.5 rounded">حفظ</span>
+<span class="text-xs text-red-500 font-medium">غداً</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl hover:bg-background-light transition-colors cursor-pointer group">
+<div class="mt-1">
+<div class="size-5 rounded-md border-2 border-neutral-border group-hover:border-primary transition-colors flex items-center justify-center"></div>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<span class="text-sm font-bold text-text-main dark:text-white decoration-primary/30 group-hover:text-primary transition-colors">تحضير درس السيرة</span>
+<div class="flex items-center gap-2">
+<span class="text-xs text-text-muted bg-neutral-100 dark:bg-gray-700 px-2 py-0.5 rounded">قراءة</span>
+<span class="text-xs text-text-muted">بعد غد</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl hover:bg-background-light transition-colors cursor-pointer group">
+<div class="mt-1">
+<div class="size-5 rounded-md border-2 border-neutral-border group-hover:border-primary transition-colors flex items-center justify-center"></div>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<span class="text-sm font-bold text-text-main dark:text-white decoration-primary/30 group-hover:text-primary transition-colors">مشروع العلوم</span>
+<div class="flex items-center gap-2">
+<span class="text-xs text-text-muted bg-neutral-100 dark:bg-gray-700 px-2 py-0.5 rounded">عملي</span>
+<span class="text-xs text-text-muted">الأسبوع القادم</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2.5 rounded-xl border border-neutral-border text-sm font-medium text-text-muted hover:text-text-main hover:bg-gray-50 transition-colors">
+                        عرض جميع المهام
+                    </button>
+</div>
+<div class="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-6 border border-blue-100 dark:border-gray-700 relative overflow-hidden">
+<span class="material-symbols-outlined absolute top-4 left-4 text-blue-200 text-[64px] opacity-50">format_quote</span>
+<h3 class="font-bold text-lg text-primary mb-3 relative z-10">وقفة اليوم</h3>
+<p class="text-text-main dark:text-white font-medium leading-relaxed relative z-10">
+                        "من سلك طريقاً يلتمس فيه علماً سهل الله له به طريقاً إلى الجنة."
+                    </p>
+<p class="text-sm text-text-muted mt-3 relative z-10">- حديث شريف</p>
+</div>
+</div>
+    </section>
+    </div>
+</main>
+
+<script src="../assets/js/main.js"></script>
+<script>
+    // ============================================
+    // متغيرات عامة
+    // ============================================
+    let studentData = null;
+    let progressData = null;
+
+    // ============================================
+    // تحميل بيانات الطالب والتقدم
+    // ============================================
+    async function loadStudentData() {
+        try {
+            // التحقق من المصادقة
+            if (typeof Auth === 'undefined' || !Auth.isAuthenticated()) {
+                window.location.href = '../public/auth/login.html';
+                return;
+            }
+
+            const user = Auth.getUser();
+            if (!user || user.role !== 'student') {
+                if (typeof Toast !== 'undefined') {
+                    Toast.error('غير مصرح لك بالوصول إلى هذه الصفحة.');
+                }
+                Auth.logout();
+                return;
+            }
+
+            // إظهار حالة التحميل
+            if (typeof Loading !== 'undefined') {
+                Loading.show(document.querySelector('main'), 'جاري تحميل البيانات...');
+            }
+
+            // تحميل بيانات الطالب
+            const studentResponse = await API.getMyStudent();
+            if (!studentResponse.success || !studentResponse.student) {
+                throw new Error('فشل في تحميل بيانات الطالب');
+            }
+            studentData = studentResponse.student;
+
+            // تحميل بيانات التقدم
+            const progressResponse = await API.getProgress(studentData._id);
+            if (!progressResponse.success || !progressResponse.progress) {
+                throw new Error('فشل في تحميل بيانات التقدم');
+            }
+            progressData = progressResponse.progress;
+
+            // تحديث الصفحة
+            updatePageWithData();
+
+        } catch (error) {
+            console.error('Error loading student data:', error);
+            
+            if (typeof Toast !== 'undefined') {
+                Toast.error(error.message || 'حدث خطأ في تحميل البيانات');
+            } else {
+                alert(error.message || 'حدث خطأ في تحميل البيانات');
+            }
+
+            if (error.message.includes('غير مصرح')) {
+                Auth.logout();
+            }
+        } finally {
+            if (typeof Loading !== 'undefined') {
+                Loading.hide(document.querySelector('main'));
+            }
+        }
+    }
+
+    // ============================================
+    // تحديث الصفحة بالبيانات
+    // ============================================
+    function updatePageWithData() {
+        if (!studentData || !progressData) return;
+
+        // تحديث التحية
+        updateGreeting();
+
+        // تحديث الصورة الشخصية
+        const avatarElement = document.querySelector('.size-20.rounded-2xl');
+        if (avatarElement && studentData.user?.avatar) {
+            avatarElement.style.backgroundImage = `url("${studentData.user.avatar}")`;
+        }
+
+        // تحديث النقاط
+        const pointsElement = document.querySelector('.text-4xl.font-bold');
+        if (pointsElement && progressData.totalPoints !== undefined) {
+            pointsElement.textContent = progressData.totalPoints.toLocaleString('ar-EG');
+        }
+
+        // تحديث إنجازك العام (النسبة المئوية)
+        const totalPossiblePoints = 1000; // الحد الأقصى للنقاط للمرحلة "مطمئن"
+        const percentage = Math.min((progressData.totalPoints / totalPossiblePoints) * 100, 100);
+        
+        const percentageElement = document.querySelector('.text-4xl.font-bold');
+        const progressBarElement = document.querySelector('.bg-white.h-full.rounded-full');
+        if (percentageElement && progressData.totalPoints !== undefined) {
+            // البحث عن عنصر النسبة المئوية (يجب أن يكون في نفس القسم)
+            const percentageSection = document.querySelector('.bg-primary.text-white');
+            if (percentageSection) {
+                const percentageText = percentageSection.querySelector('.text-4xl.font-bold');
+                if (percentageText) {
+                    percentageText.textContent = Math.round(percentage) + '%';
+                }
+                const progressBar = percentageSection.querySelector('.bg-white.h-full');
+                if (progressBar) {
+                    progressBar.style.width = Math.round(percentage) + '%';
+                }
+            }
+        }
+
+        // تحديث الأوسمة (عدد الأنشطة المكتملة)
+        const badgesElement = document.querySelectorAll('.flex.flex-col.text-left span.font-bold.text-lg');
+        if (badgesElement.length > 1 && progressData.completedActivities !== undefined) {
+            badgesElement[1].textContent = progressData.completedActivities;
+        }
+
+        // تحديث المرحلة الحالية
+        const stageElement = document.querySelector('.text-sm.opacity-80');
+        if (stageElement && studentData.currentStage) {
+            const stageNames = {
+                'مبادر': 'مبادر، استمر في التقدم!',
+                'مثابر': 'مثابر، أنت على الطريق الصحيح!',
+                'مجاهد': 'مجاهد، أداء رائع!',
+                'مطمئن': 'مطمئن، إنجاز استثنائي!'
+            };
+            stageElement.textContent = stageNames[studentData.currentStage] || 'تقدم ممتاز، استمر!';
+        }
+
+        // تحديث الأنشطة الأخيرة (من progressData)
+        updateRecentActivities();
+
+        // تحديث المهام القادمة
+        await updateUpcomingTasks();
+    }
+
+    // ============================================
+    // تحديث التحية
+    // ============================================
+    function updateGreeting() {
+        if (!studentData || !studentData.user) return;
+
+        const userName = studentData.user.name || 'مبدعنا الصغير';
+        const greetingElement = document.querySelector('h2.text-2xl');
+        
+        if (greetingElement) {
+            const hour = new Date().getHours();
+            let greeting;
+            if (hour >= 5 && hour < 12) {
+                greeting = 'صباح الخير';
+            } else if (hour >= 12 && hour < 17) {
+                greeting = 'أهلاً بك';
+            } else if (hour >= 17 && hour < 21) {
+                greeting = 'مساء الخير';
+            } else {
+                greeting = 'أهلاً بك';
+            }
+            greetingElement.textContent = `${greeting}، ${userName} 👋`;
+        }
+
+        // تحديث عدد المهام الجديدة (سيتم تحديثه بعد تحميل المهام القادمة)
+        const tasksCountElement = document.querySelector('p.text-text-muted');
+        if (tasksCountElement) {
+            tasksCountElement.textContent = 'يوم جديد، همة عالية!';
+        }
+    }
+
+    // ============================================
+    // تحديث الأنشطة الأخيرة
+    // ============================================
+    function updateRecentActivities() {
+        if (!progressData || !progressData.recentActivities) return;
+
+        const recentActivitiesContainer = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-2.gap-4');
+        if (!recentActivitiesContainer) return;
+
+        // استخدام recentActivities من progressData
+        const recentActivities = progressData.recentActivities.slice(0, 2);
+
+        if (recentActivities.length > 0) {
+            let activitiesHtml = '';
+            recentActivities.forEach((activity, index) => {
+                const icons = ['menu_book', 'emoji_events'];
+                const colors = ['orange', 'emerald'];
+                const titles = ['تم تسليم النشاط', 'إنجاز جديد'];
+                const messages = [
+                    `تم تسليم ${activity.title} بنجاح`,
+                    `حصلت على نقاط في ${activity.title}`
+                ];
+
+                activitiesHtml += `
+                    <a class="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow-sm border border-neutral-border/50 hover:border-primary/30 transition-all group flex items-start gap-4" href="student_Learning_Paths_2_Lesson_Study.html?id=${activity.id}">
+                        <div class="size-12 rounded-xl bg-${colors[index]}-50 text-${colors[index]}-600 flex items-center justify-center shrink-0 group-hover:bg-${colors[index]}-100 transition-colors">
+                            <span class="material-symbols-outlined text-[24px]">${icons[index]}</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h5 class="font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">${titles[index]}</h5>
+                            <p class="text-xs text-text-muted">${messages[index]}</p>
+                            <span class="text-[10px] text-text-muted/70 mt-1">قريباً</span>
+                        </div>
+                    </a>
+                `;
+            });
+
+            recentActivitiesContainer.innerHTML = activitiesHtml;
+        }
+    }
+
+    // ============================================
+    // تحديث المهام القادمة
+    // ============================================
+    async function updateUpcomingTasks() {
+        if (!studentData) return;
+
+        try {
+            // الحصول على جميع الأنشطة
+            const activitiesResponse = await API.getActivities();
+            if (!activitiesResponse.success || !activitiesResponse.activities) return;
+
+            const allActivities = activitiesResponse.activities;
+            
+            // الحصول على الأنشطة المعلقة (غير مكتملة) للطالب الحالي
+            const studentId = studentData._id.toString();
+            const pendingActivities = allActivities
+                .filter(a => {
+                    const hasSubmission = a.submissions && a.submissions.some(s => 
+                        s.student && s.student.toString() === studentId && s.status === 'مقبول'
+                    );
+                    return !hasSubmission;
+                })
+                .slice(0, 3);
+
+            const tasksContainer = document.querySelector('.flex.flex-col.gap-4');
+            if (!tasksContainer) return;
+
+            if (pendingActivities.length > 0) {
+                let tasksHtml = '';
+                pendingActivities.forEach(activity => {
+                    const dueDate = activity.dueDate ? new Date(activity.dueDate) : null;
+                    const daysUntilDue = dueDate ? Math.ceil((dueDate - new Date()) / (1000 * 60 * 60 * 24)) : null;
+                    
+                    let dueText = 'قريباً';
+                    let dueClass = 'text-text-muted';
+                    if (daysUntilDue !== null) {
+                        if (daysUntilDue < 0) {
+                            dueText = 'متأخر';
+                            dueClass = 'text-red-500 font-medium';
+                        } else if (daysUntilDue === 0) {
+                            dueText = 'اليوم';
+                            dueClass = 'text-red-500 font-medium';
+                        } else if (daysUntilDue === 1) {
+                            dueText = 'غداً';
+                            dueClass = 'text-red-500 font-medium';
+                        } else if (daysUntilDue <= 7) {
+                            dueText = `بعد ${daysUntilDue} أيام`;
+                        }
+                    }
+
+                    tasksHtml += `
+                        <div class="flex items-start gap-3 p-3 rounded-xl hover:bg-background-light transition-colors cursor-pointer group" onclick="window.location.href='student_Learning_Paths_2_Lesson_Study.html?id=${activity._id}'">
+                            <div class="mt-1">
+                                <div class="size-5 rounded-md border-2 border-neutral-border group-hover:border-primary transition-colors flex items-center justify-center"></div>
+                            </div>
+                            <div class="flex flex-col gap-1 flex-1">
+                                <span class="text-sm font-bold text-text-main dark:text-white decoration-primary/30 group-hover:text-primary transition-colors">${activity.title}</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs text-text-muted bg-neutral-100 dark:bg-gray-700 px-2 py-0.5 rounded">${activity.type}</span>
+                                    <span class="text-xs ${dueClass}">${dueText}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                tasksContainer.innerHTML = tasksHtml;
+            }
+        } catch (error) {
+            console.error('Error loading upcoming tasks:', error);
+        }
+    }
+
+    // ============================================
+    // تنسيق الوقت (منذ)
+    // ============================================
+    function formatTimeAgo(date) {
+        if (!date) return 'قريباً';
+        
+        const now = new Date();
+        const then = new Date(date);
+        const diffMs = now - then;
+        const diffMins = Math.floor(diffMs / 60000);
+        const diffHours = Math.floor(diffMs / 3600000);
+        const diffDays = Math.floor(diffMs / 86400000);
+
+        if (diffMins < 1) return 'الآن';
+        if (diffMins < 60) return `منذ ${diffMins} دقيقة`;
+        if (diffHours < 24) return `منذ ${diffHours} ساعة`;
+        if (diffDays === 1) return 'بالأمس';
+        if (diffDays < 7) return `منذ ${diffDays} أيام`;
+        return then.toLocaleDateString('ar-EG', { month: 'short', day: 'numeric' });
+    }
+
+    // ============================================
+    // Logout functionality
+    // ============================================
+    function handleLogout() {
+        if (typeof Auth !== 'undefined') {
+            Auth.logout();
+        } else {
+            sessionStorage.clear();
+            localStorage.removeItem('currentUserName');
+            localStorage.removeItem('accountType');
+            window.location.href = '../public/landing_page/index.html';
+        }
+    }
+
+    // ============================================
+    // تهيئة الصفحة
+    // ============================================
+    async function init() {
+        // التحقق من المصادقة
+        if (typeof Auth !== 'undefined') {
+            if (!Auth.requireAuth('../public/auth/login.html')) {
+                return;
+            }
+        }
+
+        // تحميل البيانات
+        await loadStudentData();
+
+        // ربط أزرار تسجيل الخروج
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('هل تريد تسجيل الخروج؟')) {
+                    handleLogout();
+                }
+            });
+        }
+    }
+
+    // تشغيل عند تحميل الصفحة
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+</script>
+</body></html>

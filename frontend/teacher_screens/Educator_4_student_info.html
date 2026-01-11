@@ -1,0 +1,439 @@
+﻿<!DOCTYPE html>
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>معلومات الطالب - المربي | دار الإلهام</title>
+<meta name="description" content="معلومات الطالب وبياناته في دار الإلهام">
+<meta name="keywords" content="معلومات الطالب، بيانات الطالب، دار الإلهام">
+<meta property="og:title" content="معلومات الطالب - المربي">
+<meta property="og:description" content="معلومات الطالب وبياناته">
+<meta property="og:type" content="website">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ade80",
+                        "primary-dark": "#22c55e",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102220",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2e2c",
+                        "text-main": "#0d1b1a",
+                        "text-muted": "#5a7a78",
+                    },
+                    fontFamily: {
+                        "display": ["'Noto Sans Arabic'", "Lexend", "sans-serif"],
+                        "body": ["'Noto Sans Arabic'", "Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }aside::-webkit-scrollbar {
+            width: 5px;
+        }
+        aside::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        aside::-webkit-scrollbar-thumb {
+            background: #e5e7eb;
+            border-radius: 5px;
+        }
+        .dark aside::-webkit-scrollbar-thumb {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased selection:bg-primary/20 selection:text-primary">
+<div class="flex h-screen w-full flex-col overflow-hidden">
+<header class="h-20 w-full border-b border-neutral-border bg-white dark:bg-gray-900 flex items-center justify-between px-6 shrink-0 z-30">
+<div class="flex items-center gap-4 shrink-0">
+<div class="h-10 w-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">mosque</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold tracking-tight">دار الإلهام</h2>
+</div>
+<div class="flex items-center gap-4 ml-auto shrink-0">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-text-muted dark:text-gray-400 transition-colors relative" aria-label="الإشعارات">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></span>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-white dark:border-gray-700 shadow-sm cursor-pointer hover:ring-2 hover:ring-primary transition-all" role="img" aria-label="الصورة الشخصية" style='background-image: url("../assets/placeholder.jpg");' title="تسجيل الخروج">
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<aside class="w-72 flex-shrink-0 border-l border-neutral-border bg-white dark:bg-gray-900 hidden lg:flex flex-col z-20">
+<div class="p-6 flex flex-col gap-6 h-full">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 shadow-sm border-2 border-primary" data-alt="Profile picture" style='background-image: url("../assets/placeholder.jpg");'>
+</div>
+<div class="flex flex-col">
+<h1 class="text-text-main dark:text-white text-lg font-bold leading-tight">دار الإلهام</h1>
+<p class="text-primary text-sm font-medium">لوحة المربي</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 text-text-muted dark:text-gray-400 transition-colors" href="Educator_1_Dashboard.html">
+<span class="material-symbols-outlined text-2xl">dashboard</span>
+<span class="text-base font-medium">الرئيسية</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary font-bold transition-colors" href="Educator_2_students_list.html">
+<span class="material-symbols-outlined text-2xl">group</span>
+<span class="text-base font-bold">طلابي</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 text-text-muted dark:text-gray-400 transition-colors" href="Educator_8_circles.html">
+<span class="material-symbols-outlined text-2xl">school</span>
+<span class="text-base font-medium">مجالس العلم</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 text-text-muted dark:text-gray-400 transition-colors" href="Educator_6_Practical_Tasks.html">
+<span class="material-symbols-outlined text-2xl">assignment</span>
+<span class="text-base font-medium">المهام العملية</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 text-text-muted dark:text-gray-400 transition-colors" href="Educator_7_Qur'anic_Reflections.html">
+<span class="material-symbols-outlined text-2xl">menu_book</span>
+<span class="text-base font-medium">وقفات التدبر</span>
+</a>
+</nav>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<div class="lg:hidden flex items-center justify-between p-4 bg-white dark:bg-gray-900 border-b border-neutral-border">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl">menu</span>
+<span class="font-bold text-lg">دار الإلهام</span>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Small profile avatar" style='background-image: url("../assets/placeholder.jpg");'>
+</div>
+</div>
+<span class="text-sm font-medium">تسجيل الخروج</span>
+</button>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-y-auto bg-background-light dark:bg-background-dark relative">
+<div class="flex flex-1 flex-col px-4 md:px-10 py-8 max-w-[1200px] mx-auto w-full gap-8">
+<nav class="flex items-center text-sm font-medium text-text-muted">
+<a class="hover:text-primary transition-colors" href="#">الرئيسية</a>
+<span class="material-symbols-outlined text-lg mx-1 scale-75 rtl:rotate-180">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">الطلاب</a>
+<span class="material-symbols-outlined text-lg mx-1 scale-75 rtl:rotate-180">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">حلقة الصادقين</a>
+<span class="material-symbols-outlined text-lg mx-1 scale-75 rtl:rotate-180">chevron_right</span>
+<span class="text-text-main dark:text-white">احمد بن محمد</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+<div class="lg:col-span-4 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-neutral-border/60 flex flex-col items-center">
+<div class="relative mb-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-28 border-4 border-background-light shadow-md" data-alt="Portrait of a male student wearing glasses" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="absolute bottom-1 right-2 bg-green-500 size-5 rounded-full border-4 border-white dark:border-gray-800"></div>
+</div>
+<h1 class="text-xl font-bold text-text-main dark:text-white mb-1">أحمد بن محمد</h1>
+<span class="inline-block px-3 py-1 bg-neutral-100 dark:bg-gray-700 text-text-muted text-xs font-mono rounded-full mb-6 dir-ltr">DI20260001</span>
+<div class="w-full grid grid-cols-2 gap-3 mb-6">
+<div class="bg-background-light dark:bg-gray-700/50 p-3 rounded-xl text-center">
+<span class="block text-xs text-text-muted mb-1">العمر</span>
+<span class="block text-sm font-bold text-text-main dark:text-white">11 سنة</span>
+</div>
+<div class="bg-background-light dark:bg-gray-700/50 p-3 rounded-xl text-center">
+<span class="block text-xs text-text-muted mb-1">تاريخ الالتحاق</span>
+<span class="block text-sm font-bold text-text-main dark:text-white">12/09/2023</span>
+</div>
+</div>
+<div class="flex w-full gap-3 mt-auto">
+<button class="flex-1 flex items-center justify-center gap-2 bg-neutral-border/50 hover:bg-neutral-border dark:bg-gray-700 dark:hover:bg-gray-600 text-text-main dark:text-white font-medium py-2.5 px-4 rounded-xl transition-colors text-sm">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>مراسلة</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-xl shadow-lg shadow-primary/30 transition-all text-sm">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>تقرير</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-4 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-neutral-border/60 flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-text-main dark:text-white">حالة التقدم</h3>
+<span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-lg">المستوى الثاني</span>
+</div>
+<div class="flex-1 relative pr-3 pl-4 py-2">
+<div class="absolute top-2 bottom-4 right-[19px] w-0.5 bg-neutral-100 dark:bg-gray-700"></div>
+<div class="flex flex-col h-full justify-between gap-6">
+<div class="relative flex items-center gap-4 group">
+<div class="relative z-10 flex items-center justify-center size-8 rounded-full bg-success-bg text-success-text border-2 border-white dark:border-gray-800 shadow-sm transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main dark:text-white">مبادر</span>
+<span class="text-xs text-text-muted">تم الاجتياز بنجاح</span>
+</div>
+</div>
+<div class="relative flex items-center gap-4 group">
+<div class="relative z-10 flex items-center justify-center size-8 rounded-full bg-primary text-white ring-4 ring-primary/20 border-2 border-white dark:border-gray-800 shadow-sm animate-pulse">
+<span class="size-2.5 bg-white rounded-full"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-primary">مثابر</span>
+<span class="text-xs text-primary/80 font-medium">المرحلة الحالية</span>
+</div>
+</div>
+<div class="relative flex items-center gap-4 opacity-60">
+<div class="relative z-10 flex items-center justify-center size-8 rounded-full bg-white dark:bg-gray-700 border-2 border-neutral-200 dark:border-gray-600">
+<span class="size-2 bg-neutral-300 dark:bg-gray-500 rounded-full"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-text-muted">مجاهد</span>
+<span class="text-xs text-text-muted/70">قيد الانتظار</span>
+</div>
+</div>
+<div class="relative flex items-center gap-4 opacity-60">
+<div class="relative z-10 flex items-center justify-center size-8 rounded-full bg-white dark:bg-gray-700 border-2 border-neutral-200 dark:border-gray-600">
+<span class="size-2 bg-neutral-300 dark:bg-gray-500 rounded-full"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-text-muted">مطمئن</span>
+<span class="text-xs text-text-muted/70">الهدف النهائي</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-neutral-border/60 flex flex-col">
+<h3 class="font-bold text-text-main dark:text-white mb-2">توازن القيم</h3>
+<div class="flex items-center gap-4 mb-4 text-xs justify-center">
+<div class="flex items-center gap-1.5">
+<span class="size-2.5 rounded-full bg-[#10b981]"></span>
+<span class="text-text-muted">التزكية الحالية</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="size-2.5 rounded-full bg-[#ef4444]"></span>
+<span class="text-text-muted">قبل التزكية</span>
+</div>
+</div>
+<div class="flex-1 flex items-center justify-center w-full h-full min-h-[200px]">
+<div class="relative w-full max-w-[240px] aspect-square">
+<svg class="w-full h-full overflow-visible" viewBox="0 0 200 200">
+<path d="M100 20 L162.3 49.6 L178.2 115.7 L134.6 172 L65.4 172 L21.8 115.7 L37.7 49.6 Z" fill="none" stroke="#e7ebf3" stroke-width="1"></path>
+<path d="M100 60 L131.1 74.8 L139.1 107.8 L117.3 136 L82.7 136 L60.9 107.8 L68.9 74.8 Z" fill="none" stroke="#e7ebf3" stroke-width="1"></path>
+<line stroke="#e7ebf3" stroke-dasharray="4 2" stroke-width="1" x1="100" x2="100" y1="100" y2="20"></line>
+<line stroke="#e7ebf3" stroke-dasharray="4 2" stroke-width="1" x1="100" x2="162.3" y1="100" y2="49.6"></line>
+<line stroke="#e7ebf3" stroke-dasharray="4 2" stroke-width="1" x1="100" x2="178.2" y1="100" y2="115.7"></line>
+<line stroke="#e7ebf3" stroke-dasharray="4 2" stroke-width="1" x1="100" x2="134.6" y1="100" y2="172"></line>
+<line stroke="#e7ebf3" stroke-dasharray="4 2" stroke-width="1" x1="100" x2="65.4" y1="100" y2="172"></line>
+<line stroke="#e7ebf3" stroke-dasharray="4 2" stroke-width="1" x1="100" x2="21.8" y1="100" y2="115.7"></line>
+<line stroke="#e7ebf3" stroke-dasharray="4 2" stroke-width="1" x1="100" x2="37.7" y1="100" y2="49.6"></line>
+<path d="M100 65 L125 80 L130 110 L110 130 L90 130 L70 110 L75 80 Z" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444" stroke-width="2"></path>
+<circle cx="100" cy="65" fill="#ef4444" r="3"></circle>
+<circle cx="125" cy="80" fill="#ef4444" r="3"></circle>
+<circle cx="130" cy="110" fill="#ef4444" r="3"></circle>
+<circle cx="110" cy="130" fill="#ef4444" r="3"></circle>
+<circle cx="90" cy="130" fill="#ef4444" r="3"></circle>
+<circle cx="70" cy="110" fill="#ef4444" r="3"></circle>
+<circle cx="75" cy="80" fill="#ef4444" r="3"></circle>
+<path d="M100 25 L155 55 L168 115 L128 165 L72 165 L32 115 L45 55 Z" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2"></path>
+<circle cx="100" cy="25" fill="#10b981" r="3"></circle>
+<circle cx="155" cy="55" fill="#10b981" r="3"></circle>
+<circle cx="168" cy="115" fill="#10b981" r="3"></circle>
+<circle cx="128" cy="165" fill="#10b981" r="3"></circle>
+<circle cx="72" cy="165" fill="#10b981" r="3"></circle>
+<circle cx="32" cy="115" fill="#10b981" r="3"></circle>
+<circle cx="45" cy="55" fill="#10b981" r="3"></circle>
+<text class="text-[10px] fill-text-muted font-bold" text-anchor="middle" x="100" y="15">عابد</text>
+<text class="text-[10px] fill-text-muted font-bold" text-anchor="start" x="170" y="45">قوي</text>
+<text class="text-[10px] fill-text-muted font-bold" text-anchor="start" x="185" y="120">مسؤول</text>
+<text class="text-[10px] fill-text-muted font-bold" text-anchor="middle" x="140" y="185">رحيم</text>
+<text class="text-[10px] fill-text-muted font-bold" text-anchor="middle" x="60" y="185">أمين</text>
+<text class="text-[10px] fill-text-muted font-bold" text-anchor="end" x="15" y="120">جميل</text>
+<text class="text-[10px] fill-text-muted font-bold" text-anchor="end" x="30" y="45">حر</text>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="border-b border-neutral-border dark:border-gray-700">
+<nav aria-label="Tabs" class="flex gap-8">
+<a class="border-b-[3px] border-primary pb-3 px-2 text-primary font-bold text-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+                            المهام
+                        </a>
+<a class="border-b-[3px] border-transparent pb-3 px-2 text-text-muted hover:text-text-main font-medium text-sm flex items-center gap-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">diversity_3</span>
+                            المجالس
+                        </a>
+<a class="border-b-[3px] border-transparent pb-3 px-2 text-text-muted hover:text-text-main font-medium text-sm flex items-center gap-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+                            الوقفات
+                        </a>
+</nav>
+</div>
+<div class="flex items-center justify-between py-2">
+<h3 class="text-lg font-bold text-text-main dark:text-white">سجل المهام العملية</h3>
+<div class="flex items-center gap-2">
+<select class="form-select bg-white dark:bg-gray-800 border-neutral-border rounded-lg text-sm text-text-main py-2 pr-3 pl-8 focus:ring-primary focus:border-primary">
+<option>جميع الحالات</option>
+<option>قيد المراجعة</option>
+<option>معتمدة</option>
+</select>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-neutral-border overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-right">
+<thead class="bg-background-light dark:bg-gray-900/50 border-b border-neutral-border">
+<tr>
+<th class="px-6 py-4 text-xs font-semibold text-text-muted uppercase tracking-wider" scope="col">عنوان المهمة</th>
+<th class="px-6 py-4 text-xs font-semibold text-text-muted uppercase tracking-wider" scope="col">التاريخ</th>
+<th class="px-6 py-4 text-xs font-semibold text-text-muted uppercase tracking-wider" scope="col">الموضوع</th>
+<th class="px-6 py-4 text-xs font-semibold text-text-muted uppercase tracking-wider" scope="col">الحالة</th>
+<th class="px-6 py-4 text-xs font-semibold text-text-muted uppercase tracking-wider" scope="col">الإجراء</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-neutral-border dark:divide-gray-700">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">مراجعة سورة الفاتحة</p>
+<p class="text-xs text-text-muted">تلاوة وحفظ</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-text-main font-medium">12 أكتوبر 2023</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-text-muted">القرآن الكريم</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-warning-bg text-warning-text border border-warning-text/10">
+<span class="size-1.5 rounded-full bg-warning-text animate-pulse"></span>
+                                        قيد المراجعة
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<button class="inline-flex items-center gap-1 px-4 py-1.5 rounded-lg bg-primary text-white text-sm font-medium shadow-sm hover:bg-blue-700 transition-colors">
+                                        مراجعة
+                                    </button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="bg-indigo-50 text-indigo-600 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">ورقة عمل: الهندسة</p>
+<p class="text-xs text-text-muted">واجب منزلي</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-text-main font-medium">10 أكتوبر 2023</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-text-muted">الرياضيات</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-success-bg text-success-text border border-success-text/10">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                                        معتمدة
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<button class="inline-flex items-center gap-1 px-4 py-1.5 rounded-lg bg-white border border-neutral-border text-text-main text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        عرض التفاصيل
+                                    </button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="bg-rose-50 text-rose-600 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">science</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">مشروع العلوم: النباتات</p>
+<p class="text-xs text-text-muted">نشاط صفي</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-text-main font-medium">08 أكتوبر 2023</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-text-muted">العلوم</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-success-bg text-success-text border border-success-text/10">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                                        معتمدة
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<button class="inline-flex items-center gap-1 px-4 py-1.5 rounded-lg bg-white border border-neutral-border text-text-main text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        عرض التفاصيل
+                                    </button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="bg-amber-50 text-amber-600 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">قصة الأنبياء</p>
+<p class="text-xs text-text-muted">قراءة حرة</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-text-main font-medium">05 أكتوبر 2023</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-text-muted">التاريخ الإسلامي</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-success-bg text-success-text border border-success-text/10">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                                        معتمدة
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<button class="inline-flex items-center gap-1 px-4 py-1.5 rounded-lg bg-white border border-neutral-border text-text-main text-sm font-medium hover:bg-gray-50 transition-colors">
+                                        عرض التفاصيل
+                                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-white dark:bg-gray-800 px-6 py-4 border-t border-neutral-border flex items-center justify-between">
+<p class="text-sm text-text-muted">عرض 4 من 12 نتيجة</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg border border-neutral-border text-text-muted hover:bg-gray-50 disabled:opacity-50">
+<span class="material-symbols-outlined text-[18px] rtl:rotate-180">chevron_right</span>
+</button>
+<button class="p-2 rounded-lg border border-neutral-border text-text-main hover:bg-gray-50">
+<span class="material-symbols-outlined text-[18px] rtl:rotate-180">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="../assets/js/main.js"></script>`n</body></html>

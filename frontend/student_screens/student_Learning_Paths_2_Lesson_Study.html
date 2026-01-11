@@ -1,0 +1,504 @@
+﻿<!DOCTYPE html>
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>دراسة الدرس - دار الإلهام | منصة تربوية إسلامية</title>
+<meta name="description" content="دراسة تفصيلية للدرس مع المحتوى التعليمي والتربوي في دار الإلهام">
+<meta property="og:title" content="دراسة الدرس - دار الإلهام">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/main.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ade80",
+                        "primary-dark": "#22c55e",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102220",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2c2a",
+                        "text-main": "#0d1b1a",
+                        "text-sub": "#4c9a93",
+                        "text-muted": "#4c9a93",
+                    },
+                    fontFamily: {
+                        "display": ['"Noto Sans Arabic"', "Lexend", "sans-serif"],
+                        "sans": ['"Noto Sans Arabic"', "Lexend", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main font-display min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 w-full h-20 border-b border-[#e7f3f2] bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-sm px-4 lg:px-40 shadow-sm transition-colors duration-200">
+    <div class="max-w-[1280px] mx-auto h-full flex items-center justify-between gap-8">
+        <!-- العنوان على اليمين -->
+        <div class="flex items-center gap-3 shrink-0">
+            <div class="h-10 w-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary-dark">
+                <span class="material-symbols-outlined text-2xl">mosque</span>
+            </div>
+            <h2 class="text-text-main dark:text-white text-xl font-bold tracking-tight">دار الإلهام</h2>
+        </div>
+        
+        <!-- الأزرار الثلاثة في الوسط -->
+        <nav class="hidden md:flex items-center gap-6" role="navigation" aria-label="القائمة الرئيسية">
+            <a class="text-text-sub dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary text-sm font-medium transition-colors shrink-0 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="student_Learning_Paths_1.html">
+                <span class="material-symbols-outlined text-lg">alt_route</span>
+                <span>المسارات</span>
+            </a>
+            <a class="text-text-sub dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary text-sm font-medium transition-colors shrink-0 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="student_Progress_Dashboard.html">
+                <span class="material-symbols-outlined text-lg">monitoring</span>
+                <span>لوحة التقدم</span>
+            </a>
+            <a class="text-text-sub dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary text-sm font-medium transition-colors shrink-0 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="student_info.html">
+                <span class="material-symbols-outlined text-lg">person</span>
+                <span>الملف الشخصي</span>
+            </a>
+        </nav>
+        
+        <!-- زر تسجيل الخروج على أقصى اليسار -->
+        <div class="flex items-center gap-4 shrink-0">
+            <button id="notificationsBtn" class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-text-main dark:text-white transition-colors relative" aria-label="الإشعارات">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button id="logoutBtn" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 text-sm font-medium transition-colors" aria-label="تسجيل الخروج" title="تسجيل الخروج">
+                <span class="material-symbols-outlined text-lg">logout</span>
+                <span class="hidden lg:inline">تسجيل الخروج</span>
+            </button>
+            <button class="md:hidden p-2 text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" data-mobile-menu-button aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" data-mobile-menu class="hidden md:hidden bg-white dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700" role="navigation" aria-label="القائمة المحمولة">
+        <div class="px-4 py-4 flex flex-col gap-3">
+            <a href="student_Learning_Paths_1.html" class="text-text-dark dark:text-white text-base font-medium hover:text-primary py-2 flex items-center gap-2">
+                <span class="material-symbols-outlined">alt_route</span>
+                <span>المسارات</span>
+            </a>
+            <a href="student_Progress_Dashboard.html" class="text-text-dark dark:text-white text-base font-medium hover:text-primary py-2 flex items-center gap-2">
+                <span class="material-symbols-outlined">monitoring</span>
+                <span>لوحة التقدم</span>
+            </a>
+            <a href="student_info.html" class="text-text-dark dark:text-white text-base font-medium hover:text-primary py-2 flex items-center gap-2">
+                <span class="material-symbols-outlined">person</span>
+                <span>الملف الشخصي</span>
+            </a>
+            <button id="mobileLogoutBtn" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 text-sm font-medium transition-colors mt-2">
+                <span class="material-symbols-outlined">logout</span>
+                <span>تسجيل الخروج</span>
+            </button>
+        </div>
+    </nav>
+</header>
+<main class="flex-grow w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<nav aria-label="Breadcrumb" class="flex mb-6 text-sm font-medium text-text-muted">
+<ol class="inline-flex items-center gap-2">
+<li class="inline-flex items-center">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="student_Learning_Paths_1.html">
+<span class="material-symbols-outlined text-lg">alt_route</span>
+                        المسارات
+                    </a>
+</li>
+<li class="text-gray-300 dark:text-gray-600">/</li>
+<li id="activityTypeBreadcrumb">
+<a class="hover:text-primary transition-colors" href="student_Learning_Paths_1.html">مجلس علم</a>
+</li>
+<li class="text-gray-300 dark:text-gray-600">/</li>
+<li id="activityTitleBreadcrumb" aria-current="page" class="text-text-main dark:text-white">جاري التحميل...</li>
+</ol>
+</nav>
+<div class="bg-white dark:bg-[#162a28] rounded-2xl shadow-lg border border-[#e7f3f2] dark:border-[#1e3a36] overflow-hidden">
+<div class="relative w-full aspect-video md:aspect-[21/9] group bg-gray-100 dark:bg-gray-800">
+<img id="activityImage" alt="Lesson Slide Image" class="w-full h-full object-cover opacity-90 transition-transform duration-700 ease-in-out" data-alt="Peaceful nature landscape with mountains and soft sunlight representing inspiration" src="../assets/placeholder.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<button class="absolute left-4 top-1/2 -translate-y-1/2 size-12 flex items-center justify-center bg-black/30 hover:bg-primary/90 backdrop-blur-sm rounded-full text-white transition-all duration-300 group shadow-lg">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110">chevron_left</span>
+</button>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 size-12 flex items-center justify-center bg-black/30 hover:bg-primary/90 backdrop-blur-sm rounded-full text-white transition-all duration-300 group shadow-lg">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110">chevron_right</span>
+</button>
+<button class="absolute bottom-6 left-6 flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-lg text-white transition-colors border border-white/10 shadow-sm">
+<span class="material-symbols-outlined">fullscreen</span>
+<span class="text-sm font-bold">تكبير الشاشة</span>
+</button>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-[#102220]/90 backdrop-blur px-4 py-1.5 rounded-lg shadow-sm flex items-center gap-2">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-sm font-bold text-text-main dark:text-white">عرض مرئي تفاعلي</span>
+</div>
+<div class="absolute bottom-6 right-6 px-3 py-1 bg-black/50 backdrop-blur rounded-md text-white text-xs font-mono">
+                    ٣ / ١٥
+                </div>
+</div>
+<div class="p-6 md:p-10">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 border-b border-gray-100 dark:border-gray-800 pb-8">
+<div class="flex-1 space-y-4">
+<div id="activityTags" class="flex flex-wrap items-center gap-3">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary-darker dark:text-primary text-xs font-bold border border-primary/20">جاري التحميل...</span>
+</div>
+<h1 id="activityTitle" class="text-3xl md:text-4xl font-bold text-text-main dark:text-white leading-tight">جاري التحميل...</h1>
+<p id="activityDescription" class="text-lg text-text-muted font-normal max-w-2xl leading-relaxed">
+                            جاري تحميل بيانات الدرس...
+                        </p>
+</div>
+<div class="hidden md:flex flex-col items-center justify-center bg-background-light dark:bg-background-dark p-4 rounded-xl min-w-[140px] border border-gray-100 dark:border-gray-700">
+<div class="relative size-16 mb-2">
+<svg id="progressCircle" class="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<path class="text-gray-200 dark:text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path id="progressPath" class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="0, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span id="progressPercent" class="text-sm font-bold text-text-muted">0%</span>
+</div>
+</div>
+<span class="text-xs font-medium text-text-muted">اكتمال النشاط</span>
+</div>
+</div>
+<div class="space-y-6">
+<h3 class="text-xl font-bold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">format_list_bulleted</span>
+                        تعليمات النشاط
+                    </h3>
+<div class="grid gap-4 md:grid-cols-3">
+<div class="relative flex flex-col p-5 rounded-xl bg-background-light dark:bg-background-dark border border-transparent hover:border-primary/30 transition-colors group">
+<div class="absolute -top-3 -right-3 size-8 bg-primary text-text-main font-bold flex items-center justify-center rounded-lg shadow-sm z-10">1</div>
+<div class="mb-3 text-primary group-hover:scale-110 transition-transform origin-right w-fit">
+<span class="material-symbols-outlined text-3xl">auto_stories</span>
+</div>
+<h4 class="font-bold text-lg mb-2 dark:text-white">المدارسة</h4>
+<p class="text-sm text-text-muted leading-relaxed">تصفح العرض التفاعلي بتمعن واستوعب الدلالات الإيمانية لاسم الله الصمد.</p>
+</div>
+<div class="relative flex flex-col p-5 rounded-xl bg-background-light dark:bg-background-dark border border-transparent hover:border-primary/30 transition-colors group">
+<div class="absolute -top-3 -right-3 size-8 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-text-muted font-bold flex items-center justify-center rounded-lg shadow-sm z-10">2</div>
+<div class="mb-3 text-text-muted group-hover:text-primary transition-colors w-fit">
+<span class="material-symbols-outlined text-3xl">play_circle</span>
+</div>
+<h4 class="font-bold text-lg mb-2 dark:text-white">مشاهدة</h4>
+<p class="text-sm text-text-muted leading-relaxed">تابع المقطع المرئي الإثرائي الذي يربط معنى الاسم بواقع الحياة.</p>
+</div>
+<a href="student_Learning_Paths_5_Final_Assessment.html" class="relative flex flex-col p-5 rounded-xl bg-background-light dark:bg-background-dark border border-transparent hover:border-primary/30 transition-colors group cursor-pointer">
+<div class="absolute -top-3 -right-3 size-8 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-text-muted font-bold flex items-center justify-center rounded-lg shadow-sm z-10">3</div>
+<div class="mb-3 text-text-muted group-hover:text-primary transition-colors w-fit">
+<span class="material-symbols-outlined text-3xl">task_alt</span>
+</div>
+<h4 class="font-bold text-lg mb-2 dark:text-white">الاختبار النهائي</h4>
+<p class="text-sm text-text-muted leading-relaxed">أتمم الاختبار النهائي للتأكد من فهمك واستيعابك لمحاور الدرس.</p>
+</a>
+</div>
+<div id="activityFiles" class="mt-4 space-y-2">
+<!-- سيتم تحميل الملفات هنا ديناميكياً -->
+</div>
+</div>
+</div>
+<div class="p-6 md:p-8 bg-gray-50 dark:bg-[#132422] border-t border-gray-100 dark:border-[#1e3a36] flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-sm text-text-muted">
+<span class="material-symbols-outlined">info</span>
+<span>تأكد من إتمام جميع الخطوات للحصول على النقاط</span>
+</div>
+<div class="flex w-full sm:w-auto gap-3">
+<button class="flex-1 sm:flex-none h-12 px-6 rounded-xl border border-gray-300 dark:border-gray-600 text-text-main dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">bookmark_add</span>
+<span>حفظ لوقت لاحق</span>
+</button>
+<a id="submitActivityBtn" href="student_Learning_Paths_3_lesson_submit.html" class="flex-1 sm:flex-none h-12 px-8 rounded-xl bg-primary hover:bg-[#0fdccb] text-text-main font-bold shadow-[0_4px_14px_0_rgba(19,236,218,0.39)] hover:shadow-[0_6px_20px_rgba(19,236,218,0.23)] hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+<span>تسليم الدرس</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="py-8 text-center text-text-muted text-sm">
+<p> 2023 دار الإلهام. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+    // ============================================
+    // متغيرات عامة
+    // ============================================
+    let currentActivity = null;
+    let activityId = null;
+
+    // ============================================
+    // الحصول على Activity ID من URL
+    // ============================================
+    function getActivityIdFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('id');
+    }
+
+    // ============================================
+    // تحميل بيانات النشاط من API
+    // ============================================
+    async function loadActivity() {
+        try {
+            // التحقق من المصادقة
+            if (typeof Auth === 'undefined' || !Auth.isAuthenticated()) {
+                window.location.href = '../public/auth/login.html';
+                return;
+            }
+
+            // الحصول على Activity ID
+            activityId = getActivityIdFromURL();
+            if (!activityId) {
+                throw new Error('معرف النشاط غير موجود في الرابط');
+            }
+
+            // إظهار حالة التحميل
+            const mainContent = document.querySelector('main');
+            if (mainContent) {
+                mainContent.style.opacity = '0.6';
+            }
+
+            // تحميل بيانات النشاط
+            const response = await API.getActivity(activityId);
+            if (!response.success || !response.activity) {
+                throw new Error('فشل في تحميل بيانات النشاط');
+            }
+
+            currentActivity = response.activity;
+
+            // تحديث الصفحة بالبيانات
+            updatePageWithActivityData(currentActivity);
+
+        } catch (error) {
+            console.error('Error loading activity:', error);
+            
+            if (typeof Toast !== 'undefined') {
+                Toast.error(error.message || 'حدث خطأ في تحميل بيانات النشاط');
+            } else {
+                alert(error.message || 'حدث خطأ في تحميل بيانات النشاط');
+            }
+
+            // إعادة التوجيه إلى صفحة المسارات بعد 2 ثانية
+            setTimeout(() => {
+                window.location.href = 'student_Learning_Paths_1.html';
+            }, 2000);
+
+        } finally {
+            const mainContent = document.querySelector('main');
+            if (mainContent) {
+                mainContent.style.opacity = '1';
+            }
+        }
+    }
+
+    // ============================================
+    // تحديث الصفحة بالبيانات الحقيقية
+    // ============================================
+    function updatePageWithActivityData(activity) {
+        // تحديث العنوان
+        const titleElement = document.getElementById('activityTitle');
+        if (titleElement) {
+            titleElement.textContent = activity.title || 'درس';
+        }
+
+        // تحديث الوصف
+        const descriptionElement = document.getElementById('activityDescription');
+        if (descriptionElement) {
+            descriptionElement.textContent = activity.description || 'لا يوجد وصف متاح';
+        }
+
+        // تحديث Breadcrumb
+        const typeBreadcrumb = document.getElementById('activityTypeBreadcrumb');
+        const titleBreadcrumb = document.getElementById('activityTitleBreadcrumb');
+        if (typeBreadcrumb) {
+            typeBreadcrumb.innerHTML = `<a class="hover:text-primary transition-colors" href="student_Learning_Paths_1.html">${activity.type || 'نشاط'}</a>`;
+        }
+        if (titleBreadcrumb) {
+            titleBreadcrumb.textContent = activity.title || 'درس';
+        }
+
+        // تحديث Tags
+        const tagsContainer = document.getElementById('activityTags');
+        if (tagsContainer) {
+            const typeConfig = {
+                'مجلس علم': { bg: 'bg-primary/10', text: 'text-primary-darker dark:text-primary', border: 'border-primary/20', label: 'مجلس علم' },
+                'وقفة تدبرية': { bg: 'bg-teal-500/10', text: 'text-teal-600 dark:text-teal-400', border: 'border-teal-500/20', label: 'وقفة تدبرية' },
+                'مهمة عملية': { bg: 'bg-rose-500/10', text: 'text-rose-600 dark:text-rose-400', border: 'border-rose-500/20', label: 'مهمة عملية' }
+            };
+
+            const config = typeConfig[activity.type] || typeConfig['مهمة عملية'];
+            
+            tagsContainer.innerHTML = `
+                <span class="px-3 py-1 rounded-full ${config.bg} ${config.text} text-xs font-bold border ${config.border}">${config.label}</span>
+                <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold border border-blue-500/20">${activity.circle?.level || 'مستوى 1'}</span>
+                ${activity.dueDate ? `
+                    <div class="flex items-center text-text-muted text-xs font-medium gap-1">
+                        <span class="material-symbols-outlined text-sm">schedule</span>
+                        <span>${new Date(activity.dueDate).toLocaleDateString('ar-SA')}</span>
+                    </div>
+                ` : ''}
+            `;
+        }
+
+        // تحديث الصورة
+        const imageElement = document.getElementById('activityImage');
+        if (imageElement && activity.content?.imageUrl) {
+            imageElement.src = activity.content.imageUrl;
+        }
+
+        // تحديث الملفات
+        const filesContainer = document.getElementById('activityFiles');
+        if (filesContainer) {
+            if (activity.content?.pdfUrl) {
+                filesContainer.innerHTML = `
+                    <div class="p-4 rounded-lg border border-dashed border-gray-300 dark:border-gray-700 flex items-center justify-between bg-gray-50/50 dark:bg-gray-800/30">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-red-100 dark:bg-red-900/30 p-2 rounded text-red-600 dark:text-red-400">
+                                <span class="material-symbols-outlined">picture_as_pdf</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-text-main dark:text-white">ملف القراءة: ${activity.content.pdfUrl.split('/').pop()}</p>
+                                <p class="text-xs text-text-muted">PDF</p>
+                            </div>
+                        </div>
+                        <a href="${activity.content.pdfUrl}" target="_blank" class="text-primary hover:text-primary/80 font-medium text-sm flex items-center gap-1">
+                            <span>تحميل</span>
+                            <span class="material-symbols-outlined text-lg">download</span>
+                        </a>
+                    </div>
+                `;
+            } else {
+                filesContainer.innerHTML = '';
+            }
+        }
+
+        // تحديث رابط التسليم
+        const submitBtn = document.getElementById('submitActivityBtn');
+        if (submitBtn && activityId) {
+            submitBtn.href = `student_Learning_Paths_3_lesson_submit.html?id=${activityId}`;
+        }
+
+        // تحديث رابط الاختبار النهائي
+        const assessmentLink = document.querySelector('a[href*="Final_Assessment"]');
+        if (assessmentLink && activityId) {
+            assessmentLink.href = `student_Learning_Paths_5_Final_Assessment.html?id=${activityId}`;
+        }
+
+        // تحديث نسبة الإنجاز
+        updateProgress(activity);
+    }
+
+    // ============================================
+    // تحديث نسبة الإنجاز
+    // ============================================
+    function updateProgress(activity) {
+        // الحصول على بيانات الطالب
+        const userData = typeof Auth !== 'undefined' ? Auth.getUser() : null;
+        if (!userData) return;
+
+        // البحث عن submission للطالب
+        let progress = 0;
+        if (activity.submissions && Array.isArray(activity.submissions)) {
+            // يمكن حساب التقدم بناءً على الخطوات المكتملة
+            // مؤقتاً: إذا كان هناك submission، التقدم 50%
+            const hasSubmission = activity.submissions.length > 0;
+            progress = hasSubmission ? 50 : 0;
+        }
+
+        const progressPath = document.getElementById('progressPath');
+        const progressPercent = document.getElementById('progressPercent');
+        
+        if (progressPath && progressPercent) {
+            const circumference = 2 * Math.PI * 15.9155;
+            const offset = circumference - (progress / 100) * circumference;
+            progressPath.style.strokeDasharray = `${circumference} ${circumference}`;
+            progressPath.style.strokeDashoffset = offset;
+            progressPercent.textContent = `${progress}%`;
+        }
+    }
+
+    // ============================================
+    // تهيئة الصفحة
+    // ============================================
+    async function init() {
+        // التحقق من المصادقة
+        if (typeof Auth !== 'undefined') {
+            if (!Auth.requireAuth('../public/auth/login.html')) {
+                return;
+            }
+        }
+
+        // تحميل بيانات النشاط
+        await loadActivity();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const isExpanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true';
+                mobileMenuButton.setAttribute('aria-expanded', isExpanded);
+            });
+        }
+
+        // Logout functionality
+        function handleLogout() {
+            if (typeof Auth !== 'undefined') {
+                Auth.logout();
+            } else {
+                sessionStorage.clear();
+                localStorage.removeItem('currentUserName');
+                localStorage.removeItem('accountType');
+                window.location.href = '../public/landing_page/index.html';
+            }
+        }
+        
+        const logoutBtn = document.getElementById('logoutBtn');
+        const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+        
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('هل تريد تسجيل الخروج؟')) {
+                    handleLogout();
+                }
+            });
+        }
+        
+        if (mobileLogoutBtn) {
+            mobileLogoutBtn.addEventListener('click', () => {
+                if (confirm('هل تريد تسجيل الخروج؟')) {
+                    handleLogout();
+                }
+            });
+        }
+    }
+
+    // تشغيل عند تحميل الصفحة
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+</script>
+</body>
+</html>

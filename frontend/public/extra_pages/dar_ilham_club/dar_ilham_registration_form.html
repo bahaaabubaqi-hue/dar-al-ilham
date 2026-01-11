@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="ar">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>التسجيل في دار الإلهام - نموذج التسجيل</title>
+    <meta name="description" content="نموذج التسجيل في دار الإلهام - محضن التزكية والعلم والنشاط">
+    <meta name="keywords" content="التسجيل، دار الإلهام، نموذج تسجيل">
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ade80",
+                        "primary-dark": "#22c55e",
+                        "background-light": "#FDFBF7",
+                        "background-dark": "#102220",
+                        "text-dark": "#0d1b1a",
+                        "text-light": "#4a5568",
+                    },
+                    fontFamily: {
+                        "display": ["IBM Plex Sans Arabic", "Lexend", "sans-serif"],
+                        "body": ["IBM Plex Sans Arabic", "Lexend", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', 'Lexend', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-dark antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full glass-card border-b border-[#e7f3e9] dark:border-white/10 dark:bg-background-dark/80">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 md:px-10 flex justify-center py-4">
+                <div class="w-full max-w-[1200px] flex items-center justify-between">
+                    <div class="flex items-center gap-3 text-text-dark cursor-pointer">
+                        <div class="size-10 flex items-center justify-center bg-green-100 rounded-full text-green-700">
+                            <span class="material-symbols-outlined" style="font-size: 24px;">spa</span>
+                        </div>
+                        <a href="../../landing_page/index.html" class="text-text-dark text-base font-bold leading-tight tracking-tight">دروب الإلهام</a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="dar_ilham_club.html" class="text-text-light text-xs font-medium hover:text-green-700 transition-colors">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                            العودة
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col py-12 px-4 md:px-10">
+        <div class="max-w-3xl mx-auto w-full">
+            <!-- Header Section -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-50 border border-green-100 text-sm font-medium text-green-800 mb-4">
+                    <span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+                    نموذج التسجيل
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-text-dark mb-4">
+                    دار الإلهام... محضن التزكية والعلم والنشاط
+                </h1>
+                <p class="text-green-700 font-semibold text-lg">ترحب بكم</p>
+            </div>
+
+            <!-- Form -->
+            <form id="registrationForm" class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 space-y-8">
+                <!-- Student Name -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-2">
+                        اسم الطالب الثلاثي <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        name="studentName" 
+                        id="studentName"
+                        required
+                        class="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                        placeholder="أدخل الاسم الكامل للطالب"
+                    />
+                </div>
+
+                <!-- Student Email -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-2">
+                        البريد الإلكتروني للطالب (اختياري)
+                    </label>
+                    <input 
+                        type="email" 
+                        name="studentEmail" 
+                        id="studentEmail"
+                        class="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                        placeholder="student@example.com (سيتم إنشاء بريد تلقائياً إذا لم يتم إدخاله)"
+                    />
+                </div>
+
+                <!-- Parent Phone -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-2">
+                        رقم هاتف ولي الأمر <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                        type="tel" 
+                        name="parentPhone" 
+                        required
+                        pattern="[0-9]{10}"
+                        class="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                        placeholder="05xxxxxxxx"
+                    />
+                </div>
+
+                <!-- Student Age -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-2">
+                        عمر الطالب <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                        type="number" 
+                        name="studentAge" 
+                        required
+                        min="6"
+                        max="14"
+                        class="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                        placeholder="من 6 إلى 14 سنة"
+                    />
+                </div>
+
+                <!-- Residence -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-2">
+                        مكان السكن <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        name="residence" 
+                        required
+                        class="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                        placeholder="المدينة أو الحي"
+                    />
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t-2 border-gray-100 my-8"></div>
+
+                <!-- Rating Section Title -->
+                <div class="bg-green-50 rounded-xl p-4 mb-6">
+                    <p class="text-sm text-gray-600 text-center">
+                        يرجى تقييم سلوك طفلك بناءً على ملاحظاتك الشخصية (من 1 إلى 5)
+                    </p>
+                </div>
+
+                <!-- Rating with Peers -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-3">
+                        قم بتقييم سلوك ابنك مع أقرانه <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex gap-3 flex-wrap">
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="behaviorWithPeers" value="1" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                1
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="behaviorWithPeers" value="2" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                2
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="behaviorWithPeers" value="3" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                3
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="behaviorWithPeers" value="4" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                4
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="behaviorWithPeers" value="5" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                5
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Behavior with Parents -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-3">
+                        قم بتقدير مستوى حسن السلوك مع أبويه <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex gap-3 flex-wrap">
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="behaviorWithParents" value="1" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                1
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="behaviorWithParents" value="2" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                2
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="behaviorWithParents" value="3" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                3
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="behaviorWithParents" value="4" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                4
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="behaviorWithParents" value="5" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                5
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Love of Prayer -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-3">
+                        قم بتقدير مستوى حب الصلاة في قلب الطالب <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex gap-3 flex-wrap">
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="loveOfPrayer" value="1" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                1
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="loveOfPrayer" value="2" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                2
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="loveOfPrayer" value="3" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                3
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="loveOfPrayer" value="4" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                4
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="loveOfPrayer" value="5" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                5
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Reverence for Allah -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-3">
+                        قم بتقدير مستوى تعظيم الله في قلب ابنك <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex gap-3 flex-wrap">
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="reverenceForAllah" value="1" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                1
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="reverenceForAllah" value="2" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                2
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="reverenceForAllah" value="3" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                3
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="reverenceForAllah" value="4" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                4
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="reverenceForAllah" value="5" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                5
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Love of Prophet -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-3">
+                        قم بتقدير مستوى حب النبي صلى الله عليه وسلم في قلب ابنك <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex gap-3 flex-wrap">
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="loveOfProphet" value="1" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                1
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="loveOfProphet" value="2" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                2
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="loveOfProphet" value="3" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                3
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="loveOfProphet" value="4" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                4
+                            </div>
+                        </label>
+                        <label class="flex-1 min-w-[80px] cursor-pointer">
+                            <input type="radio" name="loveOfProphet" value="5" required class="sr-only peer"/>
+                            <div class="p-3 rounded-xl border-2 border-gray-200 text-center font-bold text-gray-600 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all hover:border-primary">
+                                5
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t-2 border-gray-100 my-8"></div>
+
+                <!-- What Attracted You -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-3">
+                        ما أكثر شيء جذبك لانضمام ابنك للدار؟ <span class="text-red-500">*</span>
+                    </label>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 cursor-pointer hover:border-primary transition-all group">
+                            <input type="radio" name="attractionReason" value="تدبر القرآن" required class="sr-only peer"/>
+                            <div class="size-5 rounded-full border-2 border-gray-300 peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-all">
+                                <div class="size-2 rounded-full bg-white hidden peer-checked:block"></div>
+                            </div>
+                            <span class="text-gray-700 font-medium group-hover:text-primary">1- تدبر القرآن</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 cursor-pointer hover:border-primary transition-all group">
+                            <input type="radio" name="attractionReason" value="التزكية والعلم" required class="sr-only peer"/>
+                            <div class="size-5 rounded-full border-2 border-gray-300 peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-all">
+                                <div class="size-2 rounded-full bg-white hidden peer-checked:block"></div>
+                            </div>
+                            <span class="text-gray-700 font-medium group-hover:text-primary">2- التزكية والعلم</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 cursor-pointer hover:border-primary transition-all group">
+                            <input type="radio" name="attractionReason" value="الأنشطة والمهام" required class="sr-only peer"/>
+                            <div class="size-5 rounded-full border-2 border-gray-300 peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-all">
+                                <div class="size-2 rounded-full bg-white hidden peer-checked:block"></div>
+                            </div>
+                            <span class="text-gray-700 font-medium group-hover:text-primary">3- الأنشطة والمهام</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Monthly Contribution -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-800 mb-3">
+                        الدار تعمل بنظام الأسهم التي تغطي المصاريف الشهرية. ما هو السهم الذي تستطيعه في الشهر؟ <span class="text-red-500">*</span>
+                    </label>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 cursor-pointer hover:border-primary transition-all group">
+                            <input type="radio" name="monthlyContribution" value="سهم ال5 دنانير" required class="sr-only peer"/>
+                            <div class="size-5 rounded-full border-2 border-gray-300 peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-all">
+                                <div class="size-2 rounded-full bg-white hidden peer-checked:block"></div>
+                            </div>
+                            <span class="text-gray-700 font-medium group-hover:text-primary">1- سهم ال 5 دنانير</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 cursor-pointer hover:border-primary transition-all group">
+                            <input type="radio" name="monthlyContribution" value="سهم ال 10 دنانير" required class="sr-only peer"/>
+                            <div class="size-5 rounded-full border-2 border-gray-300 peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-all">
+                                <div class="size-2 rounded-full bg-white hidden peer-checked:block"></div>
+                            </div>
+                            <span class="text-gray-700 font-medium group-hover:text-primary">2- سهم ال 10 دنانير</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 cursor-pointer hover:border-primary transition-all group">
+                            <input type="radio" name="monthlyContribution" value="سهم ال 20 دينار" required class="sr-only peer"/>
+                            <div class="size-5 rounded-full border-2 border-gray-300 peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-all">
+                                <div class="size-2 rounded-full bg-white hidden peer-checked:block"></div>
+                            </div>
+                            <span class="text-gray-700 font-medium group-hover:text-primary">3- سهم ال 20 دينار</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 cursor-pointer hover:border-primary transition-all group">
+                            <input type="radio" name="monthlyContribution" value="طلب منحة للطالب" required class="sr-only peer"/>
+                            <div class="size-5 rounded-full border-2 border-gray-300 peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-all">
+                                <div class="size-2 rounded-full bg-white hidden peer-checked:block"></div>
+                            </div>
+                            <span class="text-gray-700 font-medium group-hover:text-primary">4- أرغب بطلب منحة للطالب</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Important Note -->
+                <div class="bg-blue-50 border-r-4 border-blue-500 rounded-xl p-4">
+                    <p class="text-sm text-blue-800 leading-relaxed">
+                        <span class="font-bold">ملاحظة مهمة:</span> لا توجد إجابة مهما كانت تساهم في قبول الطالب من عدمه، هي فقط مؤشرات للعمل على التحسين.
+                    </p>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-6">
+                    <button 
+                        type="submit"
+                        class="w-full h-14 rounded-xl bg-primary hover:bg-primary-dark text-white text-lg font-bold shadow-lg shadow-green-200 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                    >
+                        <span>إرسال الطلب</span>
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </div>
+
+                <!-- Closing Message -->
+                <div class="text-center pt-4">
+                    <p class="text-gray-600 font-medium">بارك الله فيكم وفي أبنائكم وأقر عيونكم بهم</p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#f8faf9] border-t border-[#e7f3e9] pt-12 pb-8 px-4 mt-16">
+        <div class="max-w-[1200px] mx-auto text-center">
+            <p class="text-gray-500 text-sm">جميع الحقوق محفوظة © دروب الإلهام 2024</p>
+        </div>
+    </footer>
+</div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        // Initialize Toast and Loading
+        if (typeof Toast !== 'undefined') Toast.init();
+        
+        // Read level from URL and set age automatically
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const level = urlParams.get('level');
+            const ageInput = document.getElementById('studentAge') || document.querySelector('input[name="studentAge"]');
+            
+            if (level && ageInput) {
+                // Set age based on level
+                let suggestedAge;
+                let levelName;
+                
+                switch(level) {
+                    case '1':
+                        suggestedAge = 7; // Middle of 6-8 range
+                        levelName = 'المستوى الأول (غراس)';
+                        break;
+                    case '2':
+                        suggestedAge = 10; // Middle of 9-11 range
+                        levelName = 'المستوى الثاني (بنيان)';
+                        break;
+                    case '3':
+                        suggestedAge = 13; // Middle of 12-14 range
+                        levelName = 'المستوى الثالث (أوتاد)';
+                        break;
+                    default:
+                        return;
+                }
+                
+                // Set the age value
+                ageInput.value = suggestedAge;
+                
+                // Optional: Show a message to user
+                if (typeof Toast !== 'undefined') {
+                    Toast.success(`تم تحديد ${levelName} - العمر: ${suggestedAge} سنوات`, 4000);
+                }
+            }
+        });
+    
+    // Form Validation and Submission
+    document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Validate form (basic validation already handled by HTML5 required)
+        if (!this.checkValidity()) {
+            if (typeof Toast !== 'undefined') {
+                Toast.error('يرجى ملء جميع الحقول المطلوبة');
+            } else {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+            }
+            return;
+        }
+        
+        // Validate phone number format
+        const phone = data.parentPhone;
+        if (phone && !/^(05|5)[0-9]{8}$/.test(phone)) {
+            if (typeof Toast !== 'undefined') {
+                Toast.error('يرجى إدخال رقم هاتف صحيح (10 أرقام تبدأ بـ 05)');
+            } else {
+                alert('يرجى إدخال رقم هاتف صحيح (10 أرقام تبدأ بـ 05)');
+            }
+            return;
+        }
+        
+        // Show loading state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        
+        if (typeof Loading !== 'undefined') {
+            Loading.show(submitBtn, 'جاري إرسال الطلب...');
+        } else {
+            submitBtn.disabled = true;
+            const originalText = submitBtn.innerHTML;
+            submitBtn.dataset.originalContent = originalText;
+            submitBtn.innerHTML = '<span class="spinner"></span> جاري الإرسال...';
+        }
+        
+        try {
+            // Prepare student registration data
+            const studentAge = parseInt(data.studentAge);
+            const studentName = data.studentName.trim();
+            
+            // Generate email if not provided
+            const studentEmail = data.studentEmail && data.studentEmail.trim() 
+                ? data.studentEmail.trim() 
+                : `student_${Date.now()}_${Math.random().toString(36).substring(7)}@dar-ilham.com`;
+            
+            // Generate temporary password (will need to be changed by admin/parent)
+            const tempPassword = `Temp${Date.now()}${Math.random().toString(36).substring(2, 8)}`;
+            
+            // Determine level based on age
+            let level = 'البراعم';
+            if (studentAge >= 9 && studentAge <= 12) {
+                level = 'الأشبال';
+            } else if (studentAge >= 13) {
+                level = 'الشباب';
+            }
+            
+            const studentData = {
+                name: studentName,
+                email: studentEmail,
+                password: tempPassword,
+                age: studentAge,
+                level: level,
+                // Additional form data for future use (can be stored in student profile)
+                additionalInfo: {
+                    parentPhone: data.parentPhone,
+                    residence: data.residence,
+                    behaviorWithPeers: parseInt(data.behaviorWithPeers),
+                    behaviorWithParents: parseInt(data.behaviorWithParents),
+                    loveOfPrayer: parseInt(data.loveOfPrayer),
+                    reverenceForAllah: parseInt(data.reverenceForAllah),
+                    loveOfProphet: parseInt(data.loveOfProphet),
+                    attractionReason: data.attractionReason,
+                    monthlyContribution: data.monthlyContribution
+                }
+            };
+            
+            // Check if user is authenticated (parent should be logged in)
+            const token = typeof Auth !== 'undefined' ? Auth.getToken() : localStorage.getItem('authToken');
+            
+            if (!token) {
+                // If not authenticated, show message to login first
+                if (typeof Toast !== 'undefined') {
+                    Toast.error('يرجى تسجيل الدخول أولاً كولي أمر');
+                } else {
+                    alert('يرجى تسجيل الدخول أولاً كولي أمر');
+                }
+                
+                // Redirect to login after 2 seconds
+                setTimeout(() => {
+                    window.location.href = '../../../auth/login.html';
+                }, 2000);
+                
+                // Hide loading state
+                if (typeof Loading !== 'undefined') {
+                    Loading.hide(submitBtn);
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = submitBtn.dataset.originalContent || 'إرسال الطلب';
+                }
+                return;
+            }
+            
+            // Call API to register student
+            const response = await API.registerStudent(studentData);
+            
+            if (response.success) {
+                // Show success message
+                if (typeof Toast !== 'undefined') {
+                    Toast.success('تم إرسال طلب التسجيل بنجاح! سنتواصل معك قريباً');
+                } else {
+                    alert('تم إرسال طلب التسجيل بنجاح! سنتواصل معك قريباً');
+                }
+                
+                // Reset form
+                this.reset();
+                
+                // Redirect after 2 seconds
+                setTimeout(() => {
+                    window.location.href = 'dar_ilham_club.html';
+                }, 2000);
+            }
+        } catch (error) {
+            // Hide loading state
+            if (typeof Loading !== 'undefined') {
+                Loading.hide(submitBtn);
+            } else {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = submitBtn.dataset.originalContent || 'إرسال الطلب';
+            }
+            
+            // Show error message
+            const errorMessage = error.message || 'حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى';
+            if (typeof Toast !== 'undefined') {
+                Toast.error(errorMessage);
+            } else {
+                alert(errorMessage);
+            }
+        }
+    });
+</script>
+</body>
+</html>
+

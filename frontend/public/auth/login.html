@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | دروب الإلهام</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    
+    <link rel="stylesheet" href="../../assets/css/main.css">
+
+    <style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#FDFBF7] min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md">
+        <div class="text-center mb-8">
+            <a href="../landing_page/index.html" class="inline-flex items-center gap-2 text-green-600 font-bold">
+                <span class="material-symbols-outlined">arrow_forward</span>
+                العودة للرئيسية
+            </a>
+        </div>
+
+        <div class="glass-effect p-8 rounded-3xl shadow-xl border border-green-50">
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">تسجيل الدخول</h2>
+            
+            <div class="flex bg-gray-100 p-1 rounded-xl mb-6">
+                <button id="educatorTab" class="flex-1 py-2 rounded-lg font-medium transition-all bg-green-500 text-white">مربي</button>
+                <button id="studentTab" class="flex-1 py-2 rounded-lg font-medium transition-all text-gray-500">طالب</button>
+            </div>
+
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">البريد الإلكتروني</label>
+                    <input type="email" id="email" required class="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-500 outline-none" placeholder="example@mail.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">كلمة المرور</label>
+                    <input type="password" id="password" required class="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-500 outline-none" placeholder="••••••••">
+                </div>
+                
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-green-200 mt-4">
+                    دخول
+                </button>
+            </form>
+
+            <p class="text-center text-sm text-gray-500 mt-6">
+                ليس لديك حساب؟ 
+                <a href="register.html" class="text-green-600 font-bold">سجل الآن</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        // Initialize Toast and Loading
+        if (typeof Toast !== 'undefined') Toast.init();
+        
+        const educatorTab = document.getElementById('educatorTab');
+        const studentTab = document.getElementById('studentTab');
+        const loginForm = document.getElementById('loginForm');
+        const submitBtn = loginForm.querySelector('button[type="submit"]');
+        let role = 'educator';
+
+        educatorTab.onclick = () => {
+            role = 'educator';
+            educatorTab.className = 'flex-1 py-2 rounded-lg font-medium transition-all bg-green-500 text-white';
+            studentTab.className = 'flex-1 py-2 rounded-lg font-medium transition-all text-gray-500';
+        };
+
+        studentTab.onclick = () => {
+            role = 'student';
+            studentTab.className = 'flex-1 py-2 rounded-lg font-medium transition-all bg-green-500 text-white';
+            educatorTab.className = 'flex-1 py-2 rounded-lg font-medium transition-all text-gray-500';
+        };
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            
+            // Validation
+            if (!email || !password) {
+                if (typeof Toast !== 'undefined') {
+                    Toast.error('يرجى إدخال البريد الإلكتروني وكلمة المرور');
+                } else {
+                    alert('يرجى إدخال البريد الإلكتروني وكلمة المرور');
+                }
+                return;
+            }
+            
+            // Show loading state
+            if (typeof Loading !== 'undefined') {
+                Loading.show(submitBtn, 'جاري تسجيل الدخول...');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'جاري تسجيل الدخول...';
+            }
+            
+            try {
+                // Call API
+                const response = await API.login(email, password);
+                
+                if (response.success) {
+                    // Save token and user data
+                    if (typeof Auth !== 'undefined') {
+                        Auth.setToken(response.token);
+                        Auth.setUser(response.user);
+                    } else {
+                        localStorage.setItem('authToken', response.token);
+                        sessionStorage.setItem('userData', JSON.stringify(response.user));
+                    }
+                    
+                    // Save for compatibility
+                    localStorage.setItem('currentUserName', response.user.name || email.split('@')[0]);
+                    localStorage.setItem('accountType', response.user.role || role);
+                    
+                    // Show success message
+                    if (typeof Toast !== 'undefined') {
+                        Toast.success('تم تسجيل الدخول بنجاح');
+                    }
+                    
+                    // Redirect based on role
+                    setTimeout(() => {
+                        const userRole = response.user.role || role;
+                        if (userRole === 'educator' || userRole === 'parent') {
+                            window.location.href = '../../teacher_screens/Educator_1_Dashboard.html';
+                        } else {
+                            window.location.href = '../../student_screens/student_Progress_Dashboard.html';
+                        }
+                    }, 500);
+                }
+            } catch (error) {
+                // Hide loading state
+                if (typeof Loading !== 'undefined') {
+                    Loading.hide(submitBtn);
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'دخول';
+                }
+                
+                // Show error message
+                const errorMessage = error.message || 'حدث خطأ في تسجيل الدخول. يرجى المحاولة مرة أخرى';
+                if (typeof Toast !== 'undefined') {
+                    Toast.error(errorMessage);
+                } else {
+                    alert(errorMessage);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,679 @@
+﻿<!DOCTYPE html>
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>لوحة التقدم - دار الإلهام | منصة تربوية إسلامية</title>
+<meta name="description" content="تابع تقدمك التربوي ونقاطك في القيم السبع على منصة دار الإلهام التربوية">
+<meta name="keywords" content="لوحة التقدم، القيم السبع، تربية إسلامية، دار الإلهام">
+<meta property="og:title" content="لوحة التقدم - دار الإلهام">
+<meta property="og:description" content="تابع تقدمك التربوي ونقاطك في القيم السبع">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols_Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/main.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ade80",
+                        "primary-dark": "#22c55e",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102220",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2c2a",
+                        "text-main": "#0d1b1a",
+                        "text-sub": "#4c9a93",
+                    },
+                    fontFamily: {
+                        "display": ["'Noto Sans Arabic'", "Lexend", "sans-serif"],
+                        "body": ["'Noto Sans Arabic'", "Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-text-main antialiased min-h-screen flex flex-col transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full h-20 border-b border-[#e7f3f2] bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-sm px-4 lg:px-40 shadow-sm transition-colors duration-200">
+    <div class="max-w-[1280px] mx-auto h-full flex items-center justify-between gap-8">
+        <!-- العنوان على اليمين -->
+        <div class="flex items-center gap-3 shrink-0">
+            <div class="h-10 w-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary-dark">
+                <span class="material-symbols-outlined text-2xl">mosque</span>
+            </div>
+            <h2 class="text-text-main dark:text-white text-xl font-bold tracking-tight">دار الإلهام</h2>
+        </div>
+        
+        <!-- الأزرار الثلاثة في الوسط -->
+        <nav class="flex items-center gap-6" role="navigation" aria-label="القائمة الرئيسية">
+            <a class="text-text-sub dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary text-sm font-medium transition-colors shrink-0 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="student_Learning_Paths_1.html">
+                <span class="material-symbols-outlined text-lg">alt_route</span>
+                <span>المسارات</span>
+            </a>
+            <a class="text-text-main dark:text-white text-sm font-bold border-b-2 border-primary pb-0.5 shrink-0 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="student_Progress_Dashboard.html">
+                <span class="material-symbols-outlined text-lg">monitoring</span>
+                <span>لوحة التقدم</span>
+            </a>
+            <a class="text-text-sub dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary text-sm font-medium transition-colors shrink-0 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="student_info.html">
+                <span class="material-symbols-outlined text-lg">person</span>
+                <span>الملف الشخصي</span>
+            </a>
+        </nav>
+        
+        <!-- زر تسجيل الخروج على أقصى اليسار -->
+        <div class="flex items-center gap-4 shrink-0">
+            <button id="notificationsBtn" class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-text-main dark:text-white transition-colors relative" aria-label="الإشعارات">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button id="logoutBtn" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 text-sm font-medium transition-colors" aria-label="تسجيل الخروج" title="تسجيل الخروج">
+                <span class="material-symbols-outlined text-lg">logout</span>
+                <span>تسجيل الخروج</span>
+            </button>
+        </div>
+    </div>
+</header>
+<main class="flex-1 px-4 lg:px-40 py-8">
+<div class="max-w-[1280px] mx-auto flex flex-col gap-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-2xl md:text-3xl font-bold text-gray-800"><span id="greeting">أهلاً بك يا بطل المستقبل</span> <span class="text-secondary">✦</span></h1>
+<p class="text-gray-500 font-serif text-lg">"بَلِ الْإِنسَانُ عَلَىٰ نَفْسِهِ بَصِيرَةٌ" (صدق الله العظيم)</p>
+</div>
+<section class="w-full">
+<h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">workspace_premium</span>
+                    حصاد القيم السبع
+                </h3>
+<div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-3 md:gap-4">
+<div class="group bg-white rounded-2xl p-4 shadow-soft border border-gray-100 hover:border-secondary hover:shadow-glow transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-8 h-8 bg-secondary/10 rounded-bl-2xl"></div>
+<span class="font-serif text-5xl md:text-6xl text-primary/80 group-hover:text-primary mb-2 transition-colors">ع</span>
+<h4 class="text-sm font-bold text-gray-700">عابد</h4>
+<div class="mt-2 text-xs font-bold text-secondary bg-secondary/5 px-3 py-1 rounded-full"><span class="counter" data-target="150">0</span> نقطة</div>
+</div>
+<div class="group bg-white rounded-2xl p-4 shadow-soft border border-gray-100 hover:border-secondary hover:shadow-glow transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-8 h-8 bg-secondary/10 rounded-bl-2xl"></div>
+<span class="font-serif text-5xl md:text-6xl text-primary/80 group-hover:text-primary mb-2 transition-colors">ق</span>
+<h4 class="text-sm font-bold text-gray-700">قوي</h4>
+<div class="mt-2 text-xs font-bold text-secondary bg-secondary/5 px-3 py-1 rounded-full"><span class="counter" data-target="120">0</span> نقطة</div>
+</div>
+<div class="group bg-white rounded-2xl p-4 shadow-soft border border-gray-100 hover:border-secondary hover:shadow-glow transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-8 h-8 bg-secondary/10 rounded-bl-2xl"></div>
+<span class="font-serif text-5xl md:text-6xl text-primary/80 group-hover:text-primary mb-2 transition-colors">ل</span>
+<h4 class="text-sm font-bold text-gray-700">مسؤول</h4>
+<div class="mt-2 text-xs font-bold text-secondary bg-secondary/5 px-3 py-1 rounded-full"><span class="counter" data-target="95">0</span> نقطة</div>
+</div>
+<div class="group bg-white rounded-2xl p-4 shadow-soft border border-gray-100 hover:border-secondary hover:shadow-glow transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-8 h-8 bg-secondary/10 rounded-bl-2xl"></div>
+<span class="font-serif text-5xl md:text-6xl text-primary/80 group-hover:text-primary mb-2 transition-colors">ر</span>
+<h4 class="text-sm font-bold text-gray-700">رحيم</h4>
+<div class="mt-2 text-xs font-bold text-secondary bg-secondary/5 px-3 py-1 rounded-full"><span class="counter" data-target="180">0</span> نقطة</div>
+</div>
+<div class="group bg-white rounded-2xl p-4 shadow-soft border border-gray-100 hover:border-secondary hover:shadow-glow transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-8 h-8 bg-secondary/10 rounded-bl-2xl"></div>
+<span class="font-serif text-5xl md:text-6xl text-primary/80 group-hover:text-primary mb-2 transition-colors">أ</span>
+<h4 class="text-sm font-bold text-gray-700">أمين</h4>
+<div class="mt-2 text-xs font-bold text-secondary bg-secondary/5 px-3 py-1 rounded-full"><span class="counter" data-target="110">0</span> نقطة</div>
+</div>
+<div class="group bg-white rounded-2xl p-4 shadow-soft border border-gray-100 hover:border-secondary hover:shadow-glow transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-8 h-8 bg-secondary/10 rounded-bl-2xl"></div>
+<span class="font-serif text-5xl md:text-6xl text-primary/80 group-hover:text-primary mb-2 transition-colors">ج</span>
+<h4 class="text-sm font-bold text-gray-700">جميل</h4>
+<div class="mt-2 text-xs font-bold text-secondary bg-secondary/5 px-3 py-1 rounded-full"><span class="counter" data-target="140">0</span> نقطة</div>
+</div>
+<div class="group bg-white rounded-2xl p-4 shadow-soft border border-gray-100 hover:border-secondary hover:shadow-glow transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-8 h-8 bg-secondary/10 rounded-bl-2xl"></div>
+<span class="font-serif text-5xl md:text-6xl text-primary/80 group-hover:text-primary mb-2 transition-colors">ح</span>
+<h4 class="text-sm font-bold text-gray-700">حر</h4>
+<div class="mt-2 text-xs font-bold text-secondary bg-secondary/5 px-3 py-1 rounded-full"><span class="counter" data-target="130">0</span> نقطة</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+<div class="lg:col-span-4 flex flex-col h-full">
+<div class="bg-white rounded-3xl p-6 shadow-soft border border-gray-100 h-full flex flex-col">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-lg font-bold text-gray-800">توازن القيم</h3>
+<button id="infoBtn" class="text-primary hover:bg-primary/5 p-2 rounded-full transition-colors" aria-label="معلومات عن توازن القيم"><span class="material-symbols-outlined text-lg">info</span></button>
+</div>
+<div class="flex items-center justify-center gap-4 text-xs mb-2">
+<div class="flex items-center gap-1">
+<span class="block size-2 rounded-full bg-primary"></span>
+<span>التزكية الحالية</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="block size-2 rounded-full bg-pink-400"></span>
+<span>قبل التزكية</span>
+</div>
+</div>
+<div class="flex-1 flex items-center justify-center relative py-4">
+<div class="relative size-64 md:size-72">
+<svg class="w-full h-full transform -rotate-90" viewBox="0 0 200 200">
+<polygon fill="none" points="100,20 176,45 197,121 151,186 49,186 3,121 24,45" stroke="#e5e7eb" stroke-width="1"></polygon>
+<polygon fill="none" points="100,40 157,59 173,116 138,165 62,165 27,116 43,59" stroke="#e5e7eb" stroke-width="1"></polygon>
+<polygon fill="none" points="100,60 138,72 148,110 125,143 75,143 52,110 62,72" stroke="#e5e7eb" stroke-width="1"></polygon>
+<line stroke="#f3f4f6" stroke-width="1" x1="100" x2="100" y1="100" y2="20"></line>
+<line stroke="#f3f4f6" stroke-width="1" x1="100" x2="176" y1="100" y2="45"></line>
+<line stroke="#f3f4f6" stroke-width="1" x1="100" x2="197" y1="100" y2="121"></line>
+<line stroke="#f3f4f6" stroke-width="1" x1="100" x2="151" y1="100" y2="186"></line>
+<line stroke="#f3f4f6" stroke-width="1" x1="100" x2="49" y1="100" y2="186"></line>
+<line stroke="#f3f4f6" stroke-width="1" x1="100" x2="3" y1="100" y2="121"></line>
+<line stroke="#f3f4f6" stroke-width="1" x1="100" x2="24" y1="100" y2="45"></line>
+<polygon class="drop-shadow-md" fill="rgba(72, 152, 133, 0.2)" points="100,30 165,50 180,115 140,170 60,160 35,110 35,60" stroke="#489885" stroke-width="2"></polygon>
+<circle cx="100" cy="30" fill="#489885" r="3"></circle>
+<circle cx="165" cy="50" fill="#489885" r="3"></circle>
+<circle cx="180" cy="115" fill="#489885" r="3"></circle>
+<circle cx="140" cy="170" fill="#489885" r="3"></circle>
+<circle cx="60" cy="160" fill="#489885" r="3"></circle>
+<circle cx="35" cy="110" fill="#489885" r="3"></circle>
+<circle cx="35" cy="60" fill="#489885" r="3"></circle>
+<polygon fill="none" points="100,65 145,75 155,115 130,150 70,145 55,115 55,80" stroke="#f472b6" stroke-dasharray="4" stroke-width="2"></polygon>
+<circle cx="100" cy="65" fill="#f472b6" r="2"></circle>
+<circle cx="145" cy="75" fill="#f472b6" r="2"></circle>
+<circle cx="155" cy="115" fill="#f472b6" r="2"></circle>
+<circle cx="130" cy="150" fill="#f472b6" r="2"></circle>
+<circle cx="70" cy="145" fill="#f472b6" r="2"></circle>
+<circle cx="55" cy="115" fill="#f472b6" r="2"></circle>
+<circle cx="55" cy="80" fill="#f472b6" r="2"></circle>
+</svg>
+<div class="absolute inset-0 pointer-events-none">
+<span class="absolute top-0 left-1/2 -translate-x-1/2 -mt-2 text-xs font-bold text-gray-500">عابد</span>
+<span class="absolute top-[20%] right-[5%] text-xs font-bold text-gray-500">قوي</span>
+<span class="absolute bottom-[35%] right-[-5%] text-xs font-bold text-gray-500">مسؤول</span>
+<span class="absolute bottom-0 right-[20%] text-xs font-bold text-gray-500">رحيم</span>
+<span class="absolute bottom-0 left-[20%] text-xs font-bold text-gray-500">أمين</span>
+<span class="absolute bottom-[35%] left-[-5%] text-xs font-bold text-gray-500">جميل</span>
+<span class="absolute top-[20%] left-[5%] text-xs font-bold text-gray-500">حر</span>
+</div>
+</div>
+</div>
+<p class="text-center text-sm text-text-muted mt-2">نظرة شمولية لتكامل بنائك التربوي</p>
+</div>
+</div>
+<div class="lg:col-span-8 flex flex-col gap-6 lg:gap-8">
+<div class="bg-white rounded-3xl p-6 lg:p-8 shadow-soft border border-gray-100 flex flex-col justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-full h-1 bg-gradient-to-l from-secondary/40 to-primary/40"></div>
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xl font-bold text-gray-800">رحلة الارتقاء</h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">المستوى الحالي: مثابر</span>
+</div>
+<div class="relative w-full px-4 md:px-8 pb-4">
+<div class="absolute top-1/2 left-0 right-0 h-2 bg-gray-100 rounded-full -translate-y-1/2 mx-8 md:mx-12"></div>
+<div class="absolute top-1/2 right-0 h-2 bg-gradient-to-l from-green-300 via-purple-300 to-pink-300 rounded-full -translate-y-1/2 mx-8 md:mx-12 transition-all duration-1000 shadow-sm progress-bar" data-target="45" style="width: 0%"></div>
+<div class="relative flex justify-between w-full">
+<div class="flex flex-col items-center gap-2 relative z-10 group cursor-pointer">
+<div class="size-12 md:size-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center shadow-lg ring-4 ring-white border-2 border-green-200 transition-transform hover:scale-110">
+<span class="material-symbols-outlined">emoji_events</span>
+</div>
+<span class="text-sm font-bold text-gray-800">مبادر</span>
+<span class="text-[10px] text-gray-400">البداية</span>
+</div>
+<div class="flex flex-col items-center gap-2 relative z-10 group cursor-pointer">
+<div class="size-12 md:size-14 rounded-full bg-white text-purple-500 flex items-center justify-center shadow-md ring-4 ring-white border-2 border-purple-200 transition-transform hover:scale-110 animate-pulse">
+<span class="material-symbols-outlined filled">military_tech</span>
+</div>
+<span class="text-sm font-bold text-primary">مثابر</span>
+<span class="text-[10px] text-primary/70 font-medium">جاري العمل...</span>
+</div>
+<div class="flex flex-col items-center gap-2 relative z-10 group cursor-pointer opacity-70">
+<div class="size-12 md:size-14 rounded-full bg-gray-100 text-pink-400 flex items-center justify-center shadow-sm ring-4 ring-white border-2 border-gray-200">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<span class="text-sm font-bold text-gray-500">مجاهد</span>
+</div>
+<div class="flex flex-col items-center gap-2 relative z-10 group cursor-pointer opacity-70">
+<div class="size-12 md:size-14 rounded-full bg-gray-100 text-green-800 flex items-center justify-center shadow-sm ring-4 ring-white border-2 border-gray-200">
+<span class="material-symbols-outlined">hotel_class</span>
+</div>
+<span class="text-sm font-bold text-gray-500">مطمئن</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white rounded-2xl p-6 shadow-soft border border-gray-100 flex flex-col gap-3 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start">
+<div class="size-12 rounded-xl bg-yellow-50 text-yellow-600 flex items-center justify-center">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<span class="text-xs font-bold bg-yellow-100 text-yellow-700 px-2 py-1 rounded-md">عدد المجالس</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-gray-900"><span class="counter" data-target="12">0</span></h4>
+<p class="text-sm text-text-muted font-medium">مجالس العلم</p>
+<div class="mt-2 text-xs font-bold text-green-600 bg-green-50 inline-block px-2 py-0.5 rounded"><span class="progress-percent" data-target="30">0</span>% نسبة الإنجاز</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-6 shadow-soft border border-gray-100 flex flex-col gap-3 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start">
+<div class="size-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined">extension</span>
+</div>
+<span class="text-xs font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded-md">عدد الأنشطة</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-gray-900"><span class="counter" data-target="45">0</span></h4>
+<p class="text-sm text-text-muted font-medium">الأنشطة التربوية</p>
+<div class="mt-2 text-xs font-bold text-green-600 bg-green-50 inline-block px-2 py-0.5 rounded"><span class="progress-percent" data-target="85">0</span>% نسبة الإنجاز</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-6 shadow-soft border border-gray-100 flex flex-col gap-3 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start">
+<div class="size-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<span class="text-xs font-bold bg-purple-100 text-purple-700 px-2 py-1 rounded-md">عدد الوقفات</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-gray-900"><span class="counter" data-target="28">0</span></h4>
+<p class="text-sm text-text-muted font-medium">الوقفات التدبرية</p>
+<div class="mt-2 text-xs font-bold text-green-600 bg-green-50 inline-block px-2 py-0.5 rounded"><span class="progress-percent" data-target="15">0</span>% نسبة الإنجاز</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed top-20 left-10 -z-10 opacity-30 pointer-events-none hidden lg:block">
+<svg fill="none" height="300" viewBox="0 0 300 300" width="300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="150" cy="150" fill="url(#grad1)" r="150"></circle>
+<defs>
+<radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="grad1" r="0.5">
+<stop offset="0%" style="stop-color:#489885;stop-opacity:0.1"></stop>
+<stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"></stop>
+</radialGradient>
+</defs>
+</svg>
+</div>
+<div class="fixed bottom-0 right-0 -z-10 opacity-40 pointer-events-none hidden lg:block">
+<svg fill="none" height="400" viewBox="0 0 400 400" width="400" xmlns="http://www.w3.org/2000/svg">
+<path d="M400,400 L0,400 L0,300 C100,300 150,200 250,250 C350,300 350,100 400,100 L400,400 Z" fill="#D4AF37" fill-opacity="0.05"></path>
+</svg>
+</div>
+<script>
+    // ============================================
+    // تحية ذكية (Dynamic Greeting)
+    // ============================================
+    function updateGreeting() {
+        const greetingElement = document.getElementById('greeting');
+        if (!greetingElement) return;
+        
+        // الحصول على الاسم من localStorage
+        const userName = localStorage.getItem('currentUserName') || 'مبدعنا الصغير';
+        
+        const hour = new Date().getHours();
+        let greeting;
+        
+        if (hour >= 5 && hour < 12) {
+            greeting = 'صباح الخير';
+        } else if (hour >= 12 && hour < 17) {
+            greeting = 'أهلاً بك';
+        } else if (hour >= 17 && hour < 21) {
+            greeting = 'مساء الخير';
+        } else {
+            greeting = 'أهلاً بك';
+        }
+        
+        greetingElement.textContent = greeting + '، ' + userName;
+    }
+    
+    // ============================================
+    // عداد الأرقام (Counter Animation)
+    // ============================================
+    function animateCounter(element, target, duration = 2000) {
+        const start = 0;
+        const startTime = performance.now();
+        
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // استخدام easing function (ease-out)
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(start + (target - start) * easeOut);
+            
+            element.textContent = current;
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target;
+            }
+        }
+        
+        requestAnimationFrame(updateCounter);
+    }
+    
+    // ============================================
+    // أشرطة التقدم (Progress Bars Animation)
+    // ============================================
+    function animateProgressBar(element, target, duration = 2000) {
+        const start = 0;
+        const startTime = performance.now();
+        
+        function updateProgress(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // استخدام easing function (ease-out)
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = start + (target - start) * easeOut;
+            
+            element.style.width = current + '%';
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateProgress);
+            } else {
+                element.style.width = target + '%';
+            }
+        }
+        
+        requestAnimationFrame(updateProgress);
+    }
+    
+    // ============================================
+    // تفاعل القوائم (Interactive Menus)
+    // ============================================
+    function setupInteractiveMenus() {
+        // زر معلومات توازن القيم
+        const infoBtn = document.getElementById('infoBtn');
+        if (infoBtn) {
+            infoBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                Toast.success('توازن القيم: يعرض هذا الرسم البياني توزيع القيم السبع في بنائك التربوي. كل نقطة تمثل قيمة من القيم، وكلما كانت أقرب للخارج، كانت أقوى في شخصيتك.');
+            });
+        }
+        
+        // زر الإشعارات
+        const notificationsBtn = document.getElementById('notificationsBtn');
+        if (notificationsBtn) {
+            let notificationsOpen = false;
+            let notificationsDropdown = null;
+            
+            notificationsBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (notificationsOpen) {
+                    // إغلاق القائمة
+                    if (notificationsDropdown) {
+                        notificationsDropdown.remove();
+                        notificationsDropdown = null;
+                    }
+                    notificationsOpen = false;
+                } else {
+                    // فتح القائمة
+                    notificationsDropdown = document.createElement('div');
+                    notificationsDropdown.className = 'absolute top-full left-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50';
+                    notificationsDropdown.innerHTML = `
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-sm font-bold text-gray-800 dark:text-white">الإشعارات</h4>
+                            <button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-sm">مسح الكل</button>
+                        </div>
+                        <div class="space-y-2 max-h-64 overflow-y-auto">
+                            <div class="p-3 bg-primary/5 rounded-lg border-r-2 border-primary">
+                                <p class="text-xs font-medium text-gray-700 dark:text-gray-300">تم إكمال نشاط جديد</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">منذ ساعتين</p>
+                            </div>
+                            <div class="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                                <p class="text-xs font-medium text-gray-700 dark:text-gray-300">رسالة جديدة من المربي</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">منذ يوم</p>
+                            </div>
+                            <div class="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                                <p class="text-xs font-medium text-gray-700 dark:text-gray-300">تم تحديث التقدم</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">منذ يومين</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    notificationsBtn.parentElement.style.position = 'relative';
+                    notificationsBtn.parentElement.appendChild(notificationsDropdown);
+                    notificationsOpen = true;
+                    
+                    // إغلاق عند النقر خارج القائمة
+                    setTimeout(() => {
+                        document.addEventListener('click', function closeDropdown(e) {
+                            if (!notificationsDropdown.contains(e.target) && e.target !== notificationsBtn) {
+                                notificationsDropdown.remove();
+                                notificationsDropdown = null;
+                                notificationsOpen = false;
+                                document.removeEventListener('click', closeDropdown);
+                            }
+                        });
+                    }, 10);
+                }
+            });
+        }
+    }
+    
+    // ============================================
+    // تحميل بيانات التقدم من API
+    // ============================================
+    async function loadProgressData() {
+        try {
+            // التحقق من المصادقة
+            if (typeof Auth === 'undefined' || !Auth.isAuthenticated()) {
+                window.location.href = '../public/auth/login.html';
+                return;
+            }
+
+            // إظهار حالة التحميل
+            const mainContent = document.querySelector('main');
+            if (mainContent) {
+                mainContent.style.opacity = '0.5';
+            }
+
+            // الحصول على بيانات الطالب
+            const studentResponse = await API.getMyStudent();
+            if (!studentResponse.success || !studentResponse.student) {
+                throw new Error('لم يتم العثور على ملف الطالب');
+            }
+
+            const student = studentResponse.student;
+            const studentId = student._id;
+
+            // الحصول على بيانات التقدم
+            const progressResponse = await API.getProgress(studentId);
+            if (!progressResponse.success) {
+                throw new Error('فشل في تحميل بيانات التقدم');
+            }
+
+            const progress = progressResponse.progress;
+
+            // تحديث الصفحة بالبيانات
+            updatePageWithProgressData(progress, student);
+
+        } catch (error) {
+            console.error('Error loading progress:', error);
+            
+            if (typeof Toast !== 'undefined') {
+                Toast.error(error.message || 'حدث خطأ في تحميل البيانات');
+            } else {
+                alert(error.message || 'حدث خطأ في تحميل البيانات');
+            }
+
+            // في حالة الخطأ، إعادة توجيه إلى صفحة تسجيل الدخول
+            if (error.message.includes('مصرح') || error.message.includes('token')) {
+                setTimeout(() => {
+                    window.location.href = '../public/auth/login.html';
+                }, 2000);
+            }
+        } finally {
+            const mainContent = document.querySelector('main');
+            if (mainContent) {
+                mainContent.style.opacity = '1';
+            }
+        }
+    }
+
+    // ============================================
+    // تحديث الصفحة بالبيانات الحقيقية
+    // ============================================
+    function updatePageWithProgressData(progress, student) {
+        // تحديث التحية بالاسم
+        const greetingElement = document.getElementById('greeting');
+        if (greetingElement && progress.student) {
+            const userName = progress.student.name || localStorage.getItem('currentUserName') || 'مبدعنا الصغير';
+            localStorage.setItem('currentUserName', userName);
+            updateGreeting();
+        }
+
+        // تحديث القيم السبع
+        const values = progress.values || {};
+        const valueNames = ['عابد', 'قوي', 'مسؤول', 'رحيم', 'أمين', 'جميل', 'حر'];
+        const valueElements = document.querySelectorAll('.counter[data-target]');
+        
+        valueElements.forEach((element, index) => {
+            if (index < valueNames.length) {
+                const valueName = valueNames[index];
+                const points = values[valueName] || 0;
+                element.setAttribute('data-target', points);
+                element.textContent = '0';
+            }
+        });
+
+        // تحديث المستوى الحالي
+        const stageElement = document.querySelector('.bg-primary\\/10');
+        if (stageElement && progress.student.stage) {
+            stageElement.textContent = `المستوى الحالي: ${progress.student.stage}`;
+        }
+
+        // تحديث شريط التقدم بناءً على النقاط
+        const totalPoints = progress.totalPoints || 0;
+        let progressPercent = 0;
+        if (totalPoints >= 1000) {
+            progressPercent = 100; // مطمئن
+        } else if (totalPoints >= 600) {
+            progressPercent = 75; // مجاهد
+        } else if (totalPoints >= 300) {
+            progressPercent = 45; // مثابر
+        } else {
+            progressPercent = Math.min((totalPoints / 300) * 45, 45); // مبادر
+        }
+
+        const progressBar = document.querySelector('.progress-bar');
+        if (progressBar) {
+            progressBar.setAttribute('data-target', progressPercent);
+            progressBar.style.width = '0%';
+        }
+
+        // تحديث الإحصائيات
+        const completedActivities = progress.completedActivities || 0;
+        
+        // تحديث عدد الأنشطة المكتملة
+        const activityCounter = document.querySelectorAll('.counter[data-target]')[7]; // الأنشطة
+        if (activityCounter) {
+            activityCounter.setAttribute('data-target', completedActivities);
+            activityCounter.textContent = '0';
+        }
+
+        // تحديث عدد المجالس (من الحلقات)
+        const circlesCount = progress.circles ? progress.circles.length : 0;
+        const circlesCounter = document.querySelectorAll('.counter[data-target]')[6]; // المجالس
+        if (circlesCounter) {
+            circlesCounter.setAttribute('data-target', circlesCount);
+            circlesCounter.textContent = '0';
+        }
+
+        // تحديث عدد الوقفات (يمكن حسابها من الأنشطة)
+        const reflectionsCount = Math.floor(completedActivities / 3); // تقدير
+        const reflectionsCounter = document.querySelectorAll('.counter[data-target]')[8]; // الوقفات
+        if (reflectionsCounter) {
+            reflectionsCounter.setAttribute('data-target', reflectionsCount);
+            reflectionsCounter.textContent = '0';
+        }
+
+        // تشغيل الرسوم المتحركة بعد تحديث البيانات
+        setTimeout(() => {
+            animateAllCounters();
+        }, 100);
+    }
+
+    // ============================================
+    // تشغيل جميع العدادات
+    // ============================================
+    function animateAllCounters() {
+        // تشغيل عداد الأرقام
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach((counter, index) => {
+            const target = parseInt(counter.getAttribute('data-target')) || 0;
+            setTimeout(() => {
+                animateCounter(counter, target, 1800);
+            }, index * 100);
+        });
+        
+        // تشغيل عداد النسب المئوية
+        const progressPercents = document.querySelectorAll('.progress-percent');
+        progressPercents.forEach((percent, index) => {
+            const target = parseInt(percent.getAttribute('data-target')) || 0;
+            setTimeout(() => {
+                animateCounter(percent, target, 1800);
+            }, (counters.length * 100) + (index * 100));
+        });
+        
+        // تشغيل أشرطة التقدم
+        const progressBars = document.querySelectorAll('.progress-bar');
+        progressBars.forEach((bar, index) => {
+            const target = parseInt(bar.getAttribute('data-target')) || 0;
+            setTimeout(() => {
+                animateProgressBar(bar, target, 2000);
+            }, 500 + (index * 200));
+        });
+    }
+
+    // ============================================
+    // تهيئة الصفحة عند التحميل
+    // ============================================
+    async function init() {
+        // التحقق من المصادقة
+        if (typeof Auth !== 'undefined') {
+            if (!Auth.requireAuth('../public/auth/login.html')) {
+                return;
+            }
+        }
+
+        // تحديث التحية
+        updateGreeting();
+        
+        // تحميل بيانات التقدم
+        await loadProgressData();
+        
+        // تفعيل القوائم التفاعلية
+        setupInteractiveMenus();
+        
+        // زر تسجيل الخروج
+        function handleLogout() {
+            if (typeof Auth !== 'undefined') {
+                Auth.logout();
+            } else {
+                sessionStorage.clear();
+                localStorage.removeItem('currentUserName');
+                localStorage.removeItem('accountType');
+                window.location.href = '../public/landing_page/index.html';
+            }
+        }
+        
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                if (confirm('هل تريد تسجيل الخروج؟')) {
+                    handleLogout();
+                }
+            });
+        }
+    }
+    
+    // تشغيل عند تحميل الصفحة
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+</script>
+<script src="../assets/js/main.js"></script>
+</body></html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب | دروب الإلهام</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    
+    <link rel="stylesheet" href="../../assets/css/main.css">
+
+    <style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .form-input:focus {
+            border-color: #4ade80;
+            ring: 2px;
+            ring-color: #4ade80;
+        }
+    </style>
+</head>
+<body class="bg-[#FDFBF7] min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md">
+        <div class="text-center mb-6">
+            <a href="../landing_page/index.html" class="inline-flex items-center gap-2 text-green-600 font-bold hover:gap-3 transition-all">
+                <span class="material-symbols-outlined">arrow_forward</span>
+                العودة للرئيسية
+            </a>
+        </div>
+
+        <div class="glass-effect p-8 rounded-3xl shadow-xl border border-green-50">
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">إنشاء حساب جديد</h2>
+            
+            <div class="flex bg-gray-100 p-1 rounded-xl mb-6">
+                <button id="parentTab" class="flex-1 py-2 rounded-lg font-medium transition-all bg-green-500 text-white">ولي أمر</button>
+                <button id="studentTab" class="flex-1 py-2 rounded-lg font-medium transition-all text-gray-500">طالب</button>
+            </div>
+
+            <form id="parentForm" class="space-y-4">
+                <input type="text" id="parentName" name="name" class="form-input" placeholder="اسم ولي الأمر" required>
+                <input type="email" id="parentEmail" name="email" class="form-input" placeholder="البريد الإلكتروني" required>
+                <input type="tel" id="parentPhone" name="phone" class="form-input" placeholder="رقم الهاتف (اختياري)">
+                <input type="password" id="parentPassword" name="password" class="form-input" placeholder="كلمة المرور (8 أحرف على الأقل)" required minlength="8">
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-green-200">
+                    إنشاء حساب ولي أمر
+                </button>
+            </form>
+
+            <form id="studentForm" class="space-y-4 hidden">
+                <input type="text" id="studentName" name="name" class="form-input" placeholder="اسم الطالب الثلاثي" required>
+                <input type="email" id="studentEmail" name="email" class="form-input" placeholder="البريد الإلكتروني" required>
+                <input type="number" id="studentAge" name="age" class="form-input" placeholder="العمر" required min="5" max="18">
+                <select id="studentLevel" name="level" class="form-input text-gray-500" required>
+                    <option value="">اختر المستوى التربوي</option>
+                    <option value="البراعم">البراعم (5-8 سنوات)</option>
+                    <option value="الأشبال">الأشبال (9-12 سنة)</option>
+                    <option value="الشباب">الشباب (13-17 سنة)</option>
+                </select>
+                <input type="password" id="studentPassword" name="password" class="form-input" placeholder="كلمة المرور (8 أحرف على الأقل)" required minlength="8">
+                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-blue-200">
+                    إنشاء حساب طالب
+                </button>
+            </form>
+
+            <p class="text-center text-sm text-gray-500 mt-6">
+                لديك حساب بالفعل؟ 
+                <a href="login.html" class="text-green-600 font-bold">سجل دخولك</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        // Initialize Toast and Loading
+        if (typeof Toast !== 'undefined') Toast.init();
+        
+        const parentTab = document.getElementById('parentTab');
+        const studentTab = document.getElementById('studentTab');
+        const parentForm = document.getElementById('parentForm');
+        const studentForm = document.getElementById('studentForm');
+
+        // منطق التبديل بين التبويبات
+        parentTab.onclick = () => {
+            parentForm.classList.remove('hidden');
+            studentForm.classList.add('hidden');
+            parentTab.className = 'flex-1 py-2 rounded-lg font-medium transition-all bg-green-500 text-white';
+            studentTab.className = 'flex-1 py-2 rounded-lg font-medium transition-all text-gray-500';
+        };
+
+        studentTab.onclick = () => {
+            studentForm.classList.remove('hidden');
+            parentForm.classList.add('hidden');
+            studentTab.className = 'flex-1 py-2 rounded-lg font-medium transition-all bg-blue-500 text-white';
+            parentTab.className = 'flex-1 py-2 rounded-lg font-medium transition-all text-gray-500';
+        };
+
+        // Handle Parent Registration
+        parentForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('parentName').value.trim();
+            const email = document.getElementById('parentEmail').value.trim();
+            const password = document.getElementById('parentPassword').value;
+            const phone = document.getElementById('parentPhone').value.trim();
+            
+            // Validation
+            if (!name || !email || !password) {
+                if (typeof Toast !== 'undefined') {
+                    Toast.error('يرجى ملء جميع الحقول المطلوبة');
+                } else {
+                    alert('يرجى ملء جميع الحقول المطلوبة');
+                }
+                return;
+            }
+            
+            if (password.length < 8) {
+                if (typeof Toast !== 'undefined') {
+                    Toast.error('كلمة المرور يجب أن تكون 8 أحرف على الأقل');
+                } else {
+                    alert('كلمة المرور يجب أن تكون 8 أحرف على الأقل');
+                }
+                return;
+            }
+            
+            const submitBtn = parentForm.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            if (typeof Loading !== 'undefined') {
+                Loading.show(submitBtn, 'جاري إنشاء الحساب...');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'جاري إنشاء الحساب...';
+            }
+            
+            try {
+                // Call API
+                const response = await API.register({
+                    name,
+                    email,
+                    password,
+                    phone: phone || undefined,
+                    role: 'parent'
+                });
+                
+                if (response.success) {
+                    // Save token and user data
+                    if (typeof Auth !== 'undefined') {
+                        Auth.setToken(response.token);
+                        Auth.setUser(response.user);
+                    } else {
+                        localStorage.setItem('authToken', response.token);
+                        sessionStorage.setItem('userData', JSON.stringify(response.user));
+                    }
+                    
+                    // Save for compatibility
+                    localStorage.setItem('currentUserName', response.user.name || name);
+                    localStorage.setItem('accountType', 'parent');
+                    
+                    // Show success message
+                    if (typeof Toast !== 'undefined') {
+                        Toast.success('تم إنشاء الحساب بنجاح');
+                    }
+                    
+                    // Redirect
+                    setTimeout(() => {
+                        window.location.href = '../../teacher_screens/Educator_1_Dashboard.html';
+                    }, 500);
+                }
+            } catch (error) {
+                // Hide loading state
+                if (typeof Loading !== 'undefined') {
+                    Loading.hide(submitBtn);
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'إنشاء حساب ولي أمر';
+                }
+                
+                // Show error message
+                const errorMessage = error.message || 'حدث خطأ في إنشاء الحساب. يرجى المحاولة مرة أخرى';
+                if (typeof Toast !== 'undefined') {
+                    Toast.error(errorMessage);
+                } else {
+                    alert(errorMessage);
+                }
+            }
+        });
+
+        // Handle Student Registration
+        studentForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('studentName').value.trim();
+            const email = document.getElementById('studentEmail').value.trim();
+            const password = document.getElementById('studentPassword').value;
+            const age = parseInt(document.getElementById('studentAge').value);
+            const level = document.getElementById('studentLevel').value;
+            
+            // Validation
+            if (!name || !email || !password || !age || !level) {
+                if (typeof Toast !== 'undefined') {
+                    Toast.error('يرجى ملء جميع الحقول المطلوبة');
+                } else {
+                    alert('يرجى ملء جميع الحقول المطلوبة');
+                }
+                return;
+            }
+            
+            if (password.length < 8) {
+                if (typeof Toast !== 'undefined') {
+                    Toast.error('كلمة المرور يجب أن تكون 8 أحرف على الأقل');
+                } else {
+                    alert('كلمة المرور يجب أن تكون 8 أحرف على الأقل');
+                }
+                return;
+            }
+            
+            const submitBtn = studentForm.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            if (typeof Loading !== 'undefined') {
+                Loading.show(submitBtn, 'جاري إنشاء الحساب...');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'جاري إنشاء الحساب...';
+            }
+            
+            try {
+                // Call API
+                const response = await API.register({
+                    name,
+                    email,
+                    password,
+                    role: 'student',
+                    age,
+                    level
+                });
+                
+                if (response.success) {
+                    // Save token and user data
+                    if (typeof Auth !== 'undefined') {
+                        Auth.setToken(response.token);
+                        Auth.setUser(response.user);
+                    } else {
+                        localStorage.setItem('authToken', response.token);
+                        sessionStorage.setItem('userData', JSON.stringify(response.user));
+                    }
+                    
+                    // Save for compatibility
+                    localStorage.setItem('currentUserName', response.user.name || name);
+                    localStorage.setItem('accountType', 'student');
+                    
+                    // Show success message
+                    if (typeof Toast !== 'undefined') {
+                        Toast.success('تم إنشاء الحساب بنجاح');
+                    }
+                    
+                    // Redirect
+                    setTimeout(() => {
+                        window.location.href = '../../student_screens/student_Progress_Dashboard.html';
+                    }, 500);
+                }
+            } catch (error) {
+                // Hide loading state
+                if (typeof Loading !== 'undefined') {
+                    Loading.hide(submitBtn);
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'إنشاء حساب طالب';
+                }
+                
+                // Show error message
+                const errorMessage = error.message || 'حدث خطأ في إنشاء الحساب. يرجى المحاولة مرة أخرى';
+                if (typeof Toast !== 'undefined') {
+                    Toast.error(errorMessage);
+                } else {
+                    alert(errorMessage);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

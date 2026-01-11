@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>لوحة التحكم - المربي | دار الإلهام</title>
+<meta name="description" content="لوحة تحكم المربي في دار الإلهام - إدارة الطلاب والحلقات والأنشطة التربوية">
+<meta name="keywords" content="لوحة المربي، إدارة الطلاب، الحلقات التعليمية، دار الإلهام">
+<meta property="og:title" content="لوحة التحكم - المربي | دار الإلهام">
+<meta property="og:description" content="لوحة تحكم المربي في دار الإلهام">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/main.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ade80",
+                        "primary-dark": "#22c55e",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102220",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2e2c",
+                        "text-main": "#0d1b1a",
+                        "text-muted": "#5a7a78",
+                    },
+                    fontFamily: {
+                        "display": ["'Noto Sans Arabic'", "Lexend", "sans-serif"],
+                        "body": ["'Noto Sans Arabic'", "Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }aside::-webkit-scrollbar {
+            width: 5px;
+        }
+        aside::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        aside::-webkit-scrollbar-thumb {
+            background: #e5e7eb;
+            border-radius: 5px;
+        }
+        .dark aside::-webkit-scrollbar-thumb {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] font-display antialiased overflow-hidden h-screen flex flex-col">
+<header class="h-20 w-full border-b border-[#f0f2f4] dark:border-gray-800 bg-white dark:bg-[#1a2632] flex items-center justify-between px-6 shrink-0 z-30">
+<div class="flex items-center gap-4 shrink-0">
+<div class="h-10 w-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">mosque</span>
+</div>
+<h2 class="text-[#111418] dark:text-white text-xl font-bold tracking-tight">دار الإلهام</h2>
+</div>
+<div class="flex items-center gap-4 ml-auto shrink-0">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-[#617589] dark:text-gray-400 transition-colors relative" aria-label="الإشعارات">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-white dark:border-[#1a2632]"></span>
+</button>
+<div id="profileBtn" class="size-10 rounded-full bg-cover bg-center border-2 border-white dark:border-gray-700 shadow-sm cursor-pointer hover:ring-2 hover:ring-primary transition-all" role="img" aria-label="الصورة الشخصية" style='background-image: url("../assets/placeholder.jpg");' title="تسجيل الخروج">
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden relative w-full max-w-[100vw]">
+<aside class="w-72 bg-white dark:bg-[#1a2632] border-l border-[#f0f2f4] dark:border-gray-800 flex flex-col overflow-y-auto hidden lg:flex shrink-0">
+<div class="p-6 flex flex-col gap-6 h-full">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 shadow-sm border-2 border-primary" data-alt="Profile picture" style='background-image: url("../assets/placeholder.jpg");'>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">دار الإلهام</h1>
+<p class="text-primary text-sm font-medium">لوحة المربي</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary font-bold transition-colors" href="Educator_1_Dashboard.html">
+<span class="material-symbols-outlined text-2xl">dashboard</span>
+<span class="text-base font-bold">الرئيسية</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 text-[#617589] dark:text-gray-400 transition-colors" href="Educator_2_students_list.html">
+<span class="material-symbols-outlined text-2xl">group</span>
+<span class="text-base font-medium">طلابي</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 text-[#617589] dark:text-gray-400 transition-colors" href="Educator_8_circles.html">
+<span class="material-symbols-outlined text-2xl">school</span>
+<span class="text-base font-medium">مجالس العلم</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 text-[#617589] dark:text-gray-400 transition-colors" href="Educator_6_Practical_Tasks.html">
+<span class="material-symbols-outlined text-2xl">assignment</span>
+<span class="text-base font-medium">المهام العملية</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 text-[#617589] dark:text-gray-400 transition-colors" href="Educator_7_Qur'anic_Reflections.html">
+<span class="material-symbols-outlined text-2xl">menu_book</span>
+<span class="text-base font-medium">وقفات التدبر</span>
+</a>
+</nav>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-y-auto bg-background-light dark:bg-background-dark p-6 md:p-8 w-full">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div class="flex flex-col gap-2">
+<h2 class="text-text-main dark:text-white text-3xl lg:text-4xl font-black tracking-tight">لوحة التحكم</h2>
+<p class="text-text-muted dark:text-gray-400 text-base lg:text-lg" id="educatorGreeting">أهلاً بك، أستاذنا الفاضل. يومك مبارك.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center size-10 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary text-text-muted hover:text-primary transition-all shadow-sm">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary text-text-muted hover:text-primary transition-all shadow-sm" aria-label="التقويم">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<div class="bg-white dark:bg-surface-dark p-5 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col gap-3 group hover:border-primary/50 transition-all">
+<div class="flex items-center justify-between">
+<span class="text-text-muted dark:text-gray-400 text-sm font-medium">عدد الطلاب</span>
+<div class="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined text-xl">groups</span>
+</div>
+</div>
+<p class="text-text-main dark:text-white text-3xl font-bold">25</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-5 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col gap-3 group hover:border-primary/50 transition-all">
+<div class="flex items-center justify-between">
+<span class="text-text-muted dark:text-gray-400 text-sm font-medium">الحضور اليومي</span>
+<div class="p-2 bg-primary/10 rounded-lg text-primary-dark dark:text-primary">
+<span class="material-symbols-outlined text-xl">donut_large</span>
+</div>
+</div>
+<p class="text-text-main dark:text-white text-3xl font-bold">95%</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-5 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col gap-3 group hover:border-primary/50 transition-all">
+<div class="flex items-center justify-between">
+<span class="text-text-muted dark:text-gray-400 text-sm font-medium">مجالس العلم</span>
+<div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined text-xl">school</span>
+</div>
+</div>
+<p class="text-text-main dark:text-white text-3xl font-bold">8</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-5 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col gap-3 group hover:border-primary/50 transition-all">
+<div class="flex items-center justify-between">
+<span class="text-text-muted dark:text-gray-400 text-sm font-medium">المهام العملية</span>
+<div class="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined text-xl">assignment_turned_in</span>
+</div>
+</div>
+<p class="text-text-main dark:text-white text-3xl font-bold">12</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-5 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col gap-3 group hover:border-primary/50 transition-all">
+<div class="flex items-center justify-between">
+<span class="text-text-muted dark:text-gray-400 text-sm font-medium">الوقفات القرآنية</span>
+<div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+</div>
+</div>
+<p class="text-text-main dark:text-white text-3xl font-bold">24</p>
+</div>
+</div>
+<div class="flex flex-col gap-8">
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<section class="xl:col-span-2 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-text-main dark:text-white">الحلقات النشطة</h3>
+<button class="size-8 flex items-center justify-center rounded-lg bg-primary/10 text-primary-dark dark:text-primary hover:bg-primary hover:text-white transition-colors" aria-label="إضافة حلقة جديدة">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-teal-50 dark:bg-teal-900/20 flex items-center justify-center text-teal-600 dark:text-teal-400">
+<span class="material-symbols-outlined">mosque</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white">حلقة الصادقين</h4>
+<p class="text-xs text-text-muted">المستوى المتقدم</p>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold">نشطة الآن</span>
+</div>
+<div class="flex items-center -space-x-2 space-x-reverse">
+<div class="size-8 rounded-full border-2 border-white dark:border-surface-dark bg-cover bg-center" data-alt="Student 1" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-surface-dark bg-cover bg-center" data-alt="Student 2" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-surface-dark bg-cover bg-center" data-alt="Student 3" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-surface-dark bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xs font-bold text-gray-500 dark:text-gray-300">
+                                            +3
+                                        </div>
+</div>
+<div class="pt-3 border-t border-gray-50 dark:border-gray-800 flex justify-between items-center">
+<span class="text-xs text-text-muted">اللقاء القادم: 3:00 م</span>
+<button class="text-primary-dark dark:text-primary text-xs font-bold hover:underline">عرض التفاصيل</button>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-4 opacity-80">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white">حلقة المتقين</h4>
+<p class="text-xs text-text-muted">المستوى المتوسط</p>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-[10px] font-bold">متوقفة</span>
+</div>
+<div class="flex items-center -space-x-2 space-x-reverse">
+<div class="size-8 rounded-full border-2 border-white dark:border-surface-dark bg-cover bg-center" data-alt="Student 4" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-surface-dark bg-cover bg-center" data-alt="Student 5" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-surface-dark bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xs font-bold text-gray-500 dark:text-gray-300">
+                                            +2
+                                        </div>
+</div>
+<div class="pt-3 border-t border-gray-50 dark:border-gray-800 flex justify-between items-center">
+<span class="text-xs text-text-muted">اللقاء القادم: غداً</span>
+<button class="text-primary-dark dark:text-primary text-xs font-bold hover:underline">عرض التفاصيل</button>
+</div>
+</div>
+</div>
+</section>
+<div class="xl:col-span-1 flex flex-col">
+<div class="bg-gradient-to-br from-primary-dark to-primary p-6 rounded-2xl shadow-lg text-white relative overflow-hidden group h-full justify-center flex flex-col">
+<div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] opacity-10"></div>
+<div class="relative z-10">
+<h4 class="font-bold text-lg mb-1">لقاء تعليمي قريب</h4>
+<p class="text-white/80 text-sm mb-4">في اليوم: حلقة الصادقين</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-xs font-bold">بعد ساعة من الآن</span>
+</div>
+<button class="w-full py-2 bg-white text-primary-dark rounded-lg text-sm font-bold shadow-sm hover:bg-gray-50 transition-colors">
+                                        عرض التفاصيل
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<section class="flex flex-col gap-4">
+<h3 class="text-xl font-bold text-text-main dark:text-white">الأنشطة المعلقة للمراجعة</h3>
+<div class="bg-white dark:bg-surface-dark rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden w-full">
+<div class="flex flex-col divide-y divide-gray-100 dark:divide-gray-800">
+<div class="p-4 flex flex-col sm:flex-row items-center gap-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-3 w-full sm:w-auto flex-1">
+<div class="size-10 rounded-full bg-cover bg-center flex-shrink-0" data-alt="Student portrait" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="flex flex-col">
+<p class="font-bold text-text-main dark:text-white text-sm">أحمد محمد</p>
+<p class="text-xs text-text-muted">حلقة الصادقين - نشاط قراءة</p>
+</div>
+</div>
+<div class="w-full sm:w-32 flex justify-start sm:justify-center">
+<span class="bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded text-xs font-bold whitespace-nowrap">منذ يوم</span>
+</div>
+<div class="flex items-center gap-3 flex-[2] w-full sm:w-auto p-2 bg-background-light dark:bg-background-dark rounded-lg border border-gray-100 dark:border-gray-800">
+<div class="h-10 w-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Thumbnail of a book report" src="../assets/placeholder.jpg"/>
+</div>
+<div class="flex flex-col">
+<p class="font-bold text-sm text-text-main dark:text-gray-200">تلخيص كتاب "الرسالة"</p>
+<p class="text-xs text-text-muted">من المستوى: حلقة الصادقين</p>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-green-50 hover:bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400 dark:hover:bg-green-900/40 text-xs font-bold transition-colors">
+<span class="material-symbols-outlined text-base">check</span>
+                                            الموافقة
+                                        </button>
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 text-xs font-bold transition-colors">
+<span class="material-symbols-outlined text-base">edit</span>
+                                            تعديل
+                                        </button>
+</div>
+</div>
+<div class="p-4 flex flex-col sm:flex-row items-center gap-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-3 w-full sm:w-auto flex-1">
+<div class="size-10 rounded-full bg-cover bg-center flex-shrink-0" data-alt="Student portrait" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="flex flex-col">
+<p class="font-bold text-text-main dark:text-white text-sm">سارة أحمد</p>
+<p class="text-xs text-text-muted">حلقة الصادقين - نشاط كتابة</p>
+</div>
+</div>
+<div class="w-full sm:w-32 flex justify-start sm:justify-center">
+<span class="bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 px-2 py-1 rounded text-xs font-bold whitespace-nowrap">منذ يومين</span>
+</div>
+<div class="flex items-center gap-3 flex-[2] w-full sm:w-auto p-2 bg-background-light dark:bg-background-dark rounded-lg border border-gray-100 dark:border-gray-800">
+<div class="h-10 w-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Thumbnail of handwriting" src="../assets/placeholder.jpg"/>
+</div>
+<div class="flex flex-col">
+<p class="font-bold text-sm text-text-main dark:text-gray-200">كتابة موضوع تعبير</p>
+<p class="text-xs text-text-muted">من المستوى: حلقة الصادقين</p>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-green-50 hover:bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400 dark:hover:bg-green-900/40 text-xs font-bold transition-colors">
+<span class="material-symbols-outlined text-base">check</span>
+                                            الموافقة
+                                        </button>
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 text-xs font-bold transition-colors">
+<span class="material-symbols-outlined text-base">edit</span>
+                                            تعديل
+                                        </button>
+</div>
+</div>
+<div class="p-4 flex flex-col sm:flex-row items-center gap-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-3 w-full sm:w-auto flex-1">
+<div class="size-10 rounded-full bg-cover bg-center flex-shrink-0" data-alt="Student portrait" style='background-image: url("../assets/placeholder.jpg");'></div>
+<div class="flex flex-col">
+<p class="font-bold text-text-main dark:text-white text-sm">عمر خالد</p>
+<p class="text-xs text-text-muted">حلقة الصادقين - نشاط إلقاء</p>
+</div>
+</div>
+<div class="w-full sm:w-32 flex justify-start sm:justify-center">
+<span class="bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-2 py-1 rounded text-xs font-bold whitespace-nowrap">منذ ثلاثة أيام</span>
+</div>
+<div class="flex items-center gap-3 flex-[2] w-full sm:w-auto p-2 bg-background-light dark:bg-background-dark rounded-lg border border-gray-100 dark:border-gray-800">
+<div class="h-10 w-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
+<div class="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined">mic</span>
+</div>
+</div>
+<div class="flex flex-col">
+<p class="font-bold text-sm text-text-main dark:text-gray-200">إلقاء قصيدة من حفظ</p>
+<p class="text-xs text-text-muted">من المستوى: حلقة الصادقين</p>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-green-50 hover:bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400 dark:hover:bg-green-900/40 text-xs font-bold transition-colors">
+<span class="material-symbols-outlined text-base">check</span>
+                                            الموافقة
+                                        </button>
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 text-xs font-bold transition-colors">
+<span class="material-symbols-outlined text-base">edit</span>
+                                            تعديل
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const greetingElement = document.getElementById('educatorGreeting');
+        if (greetingElement) {
+            const userName = localStorage.getItem('currentUserName') || 'أستاذنا الفاضل';
+            greetingElement.textContent = 'أهلاً بك، ' + userName + '. يومك مبارك.';
+        }
+        const profileBtn = document.getElementById('profileBtn');
+        if (profileBtn) {
+            profileBtn.addEventListener('click', function() {
+                if (confirm('هل تريد تسجيل الخروج؟')) {
+                    localStorage.removeItem('currentUserName');
+                    localStorage.removeItem('accountType');
+                    window.location.href = '../public/landing_page/index.html';
+                }
+            });
+        }
+    });
+</script>
+<script src="../assets/js/main.js"></script>`n</body></html>
