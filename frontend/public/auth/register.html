@@ -83,28 +83,22 @@
         </div>
     </div>
 
+    <script src="../../assets/js/main.js"></script>
     <script>
-        // Load main.js synchronously to ensure API is available
+        // Wait for main.js to load
         (function() {
-            const script = document.createElement('script');
-            script.src = '../../assets/js/main.js';
-            script.onload = function() {
-                // Initialize Toast and Loading
-                if (typeof Toast !== 'undefined') {
-                    Toast.init();
+            // Check if API is loaded after a short delay
+            setTimeout(function() {
+                if (typeof API === 'undefined') {
+                    console.error('API is not defined. Script may not have loaded correctly.');
+                    console.log('Current location:', window.location.href);
+                    console.log('Trying to load main.js from:', '../../assets/js/main.js');
                 }
-                // Initialize forms after API is loaded
-                initForms();
-            };
-            script.onerror = function() {
-                console.error('Failed to load main.js');
-                alert('خطأ في تحميل الملفات. يرجى التحقق من المسار.');
-            };
-            document.head.appendChild(script);
+            }, 100);
         })();
         
-        // Initialize forms
-        function initForms() {
+        // Initialize Toast and Loading
+        if (typeof Toast !== 'undefined') Toast.init();
         
         const parentTab = document.getElementById('parentTab');
         const studentTab = document.getElementById('studentTab');
@@ -207,7 +201,15 @@
                     
                     // Redirect
                     setTimeout(() => {
-                        window.location.href = '../../teacher_screens/Educator_1_Dashboard.html';
+                        // Use path that works in both dev and production
+                        const currentPath = window.location.pathname;
+                        if (currentPath.includes('/frontend/') || window.location.hostname !== 'localhost') {
+                            // Production or served from /frontend/
+                            window.location.href = '/teacher_screens/Educator_1_Dashboard.html';
+                        } else {
+                            // Local development
+                            window.location.href = '../../teacher_screens/Educator_1_Dashboard.html';
+                        }
                     }, 500);
                 }
             } catch (error) {
@@ -312,7 +314,15 @@
                     
                     // Redirect
                     setTimeout(() => {
-                        window.location.href = '../../student_screens/student_Progress_Dashboard.html';
+                        // Use path that works in both dev and production
+                        const currentPath = window.location.pathname;
+                        if (currentPath.includes('/frontend/') || window.location.hostname !== 'localhost') {
+                            // Production or served from /frontend/
+                            window.location.href = '/student_screens/student_Progress_Dashboard.html';
+                        } else {
+                            // Local development
+                            window.location.href = '../../student_screens/student_Progress_Dashboard.html';
+                        }
                     }, 500);
                 }
             } catch (error) {
@@ -333,7 +343,6 @@
                 }
             }
         });
-        } // End of initForms function
     </script>
 </body>
 </html>
