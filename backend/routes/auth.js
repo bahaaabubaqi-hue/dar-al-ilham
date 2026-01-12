@@ -3,6 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
 const User = require('../models/User');
+const Student = require('../models/Student');
 
 // Generate JWT Token
 const generateToken = (userId) => {
@@ -31,7 +32,7 @@ router.post('/register', [
             });
         }
 
-        const { name, email, password, phone, role } = req.body;
+        const { name, email, password, phone, role, age, level } = req.body;
 
         // Check if user exists
         const existingUser = await User.findOne({ email });
@@ -50,6 +51,27 @@ router.post('/register', [
             phone,
             role
         });
+
+        // If registering as student, create Student profile
+        if (role === 'student' && age && level) {
+            // Map level from form to Student schema enum
+            let studentLevel = level;
+            if (level === 'البراعم' || level === 'براعم') studentLevel = 'براعم';
+            else if (level === 'الأشبال' || level === 'أشبال') studentLevel = 'أشبال';
+            else if (level === 'الشباب' || level === 'ملهمون') studentLevel = 'ملهمون';
+
+            try {
+                await Student.create({
+                    user: user._id,
+                    age: parseInt(age),
+                    level: studentLevel
+                });
+            } catch (studentError) {
+                // If Student creation fails, delete the user
+                await User.findByIdAndDelete(user._id);
+                throw new Error('فشل في إنشاء ملف الطالب: ' + studentError.message);
+            }
+        }
 
         // Generate token
         const token = generateToken(user._id);
