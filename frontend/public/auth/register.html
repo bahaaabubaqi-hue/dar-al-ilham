@@ -83,10 +83,28 @@
         </div>
     </div>
 
-    <script src="../../assets/js/main.js"></script>
     <script>
-        // Initialize Toast and Loading
-        if (typeof Toast !== 'undefined') Toast.init();
+        // Load main.js synchronously to ensure API is available
+        (function() {
+            const script = document.createElement('script');
+            script.src = '../../assets/js/main.js';
+            script.onload = function() {
+                // Initialize Toast and Loading
+                if (typeof Toast !== 'undefined') {
+                    Toast.init();
+                }
+                // Initialize forms after API is loaded
+                initForms();
+            };
+            script.onerror = function() {
+                console.error('Failed to load main.js');
+                alert('خطأ في تحميل الملفات. يرجى التحقق من المسار.');
+            };
+            document.head.appendChild(script);
+        })();
+        
+        // Initialize forms
+        function initForms() {
         
         const parentTab = document.getElementById('parentTab');
         const studentTab = document.getElementById('studentTab');
@@ -144,6 +162,18 @@
             } else {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = 'جاري إنشاء الحساب...';
+            }
+            
+            // Check if API is available
+            if (typeof API === 'undefined') {
+                if (typeof Loading !== 'undefined') {
+                    Loading.hide(submitBtn);
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'إنشاء حساب ولي أمر';
+                }
+                alert('خطأ: API غير متاح. يرجى تحديث الصفحة.');
+                return;
             }
             
             try {
@@ -238,6 +268,18 @@
                 submitBtn.innerHTML = 'جاري إنشاء الحساب...';
             }
             
+            // Check if API is available
+            if (typeof API === 'undefined') {
+                if (typeof Loading !== 'undefined') {
+                    Loading.hide(submitBtn);
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'إنشاء حساب طالب';
+                }
+                alert('خطأ: API غير متاح. يرجى تحديث الصفحة.');
+                return;
+            }
+            
             try {
                 // Call API
                 const response = await API.register({
@@ -291,6 +333,7 @@
                 }
             }
         });
+        } // End of initForms function
     </script>
 </body>
 </html>
