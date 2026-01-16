@@ -119,12 +119,16 @@
                 role: userRole
             };
             
-            // حفظ بيانات المصادقة
+            // حفظ بيانات المصادقة بشكل متزامن
+            const token = 'mock-token-for-testing-' + Date.now();
+            
             if (typeof Auth !== 'undefined') {
-                Auth.setToken('mock-token-for-testing-' + Date.now());
+                Auth.setToken(token);
                 Auth.setUser(mockUser);
+                // التأكد من حفظ isAuthenticated
+                sessionStorage.setItem('isAuthenticated', 'true');
             } else {
-                localStorage.setItem('authToken', 'mock-token-for-testing-' + Date.now());
+                localStorage.setItem('authToken', token);
                 sessionStorage.setItem('userData', JSON.stringify(mockUser));
                 sessionStorage.setItem('isAuthenticated', 'true');
             }
@@ -132,12 +136,24 @@
             localStorage.setItem('currentUserName', mockUser.name);
             localStorage.setItem('accountType', userRole);
             
+            // التأكد من حفظ جميع البيانات
+            try {
+                // اختبار الحفظ
+                const testAuth = sessionStorage.getItem('isAuthenticated');
+                const testToken = localStorage.getItem('authToken');
+                if (!testAuth || !testToken) {
+                    console.error('فشل في حفظ بيانات المصادقة');
+                }
+            } catch (e) {
+                console.error('خطأ في التحقق من حفظ البيانات:', e);
+            }
+            
             // Show success message
             if (typeof Toast !== 'undefined') {
                 Toast.success('تم تسجيل الدخول بنجاح');
             }
             
-            // التوجيه بناءً على الدور
+            // التوجيه بعد التأكد من حفظ البيانات
             setTimeout(() => {
                 const currentPath = window.location.pathname;
                 const isProduction = currentPath.includes('/frontend/') || 
@@ -159,7 +175,7 @@
                         window.location.href = '../../teacher_screens/Educator_1_Dashboard.html';
                     }
                 }
-            }, 500);
+            }, 300);
         });
     </script>
 </body>
