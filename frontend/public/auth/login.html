@@ -33,8 +33,8 @@
             <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">تسجيل الدخول</h2>
             
             <div class="flex bg-gray-100 p-1 rounded-xl mb-6">
-                <button id="educatorTab" class="flex-1 py-2 rounded-lg font-medium transition-all bg-green-500 text-white">مربي</button>
-                <button id="studentTab" class="flex-1 py-2 rounded-lg font-medium transition-all text-gray-500">طالب</button>
+                <button id="educatorTab" class="flex-1 py-2 rounded-lg font-medium transition-all text-gray-500">مربي</button>
+                <button id="studentTab" class="flex-1 py-2 rounded-lg font-medium transition-all bg-green-500 text-white">طالب</button>
             </div>
 
             <form id="loginForm" class="space-y-4">
@@ -68,7 +68,7 @@
         const studentTab = document.getElementById('studentTab');
         const loginForm = document.getElementById('loginForm');
         const submitBtn = loginForm.querySelector('button[type="submit"]');
-        let role = 'educator';
+        let role = 'student'; // الافتراضي طالب
 
         educatorTab.onclick = () => {
             role = 'educator';
@@ -88,7 +88,7 @@
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value;
             
-            // Validation
+            // Validation - فقط التحقق من وجود الحقول
             if (!email || !password) {
                 if (typeof Toast !== 'undefined') {
                     Toast.error('يرجى إدخال البريد الإلكتروني وكلمة المرور');
@@ -106,56 +106,60 @@
                 submitBtn.innerHTML = 'جاري تسجيل الدخول...';
             }
             
-            try {
-                // Call API
-                const response = await API.login(email, password);
-                
-                if (response.success) {
-                    // Save token and user data
-                    if (typeof Auth !== 'undefined') {
-                        Auth.setToken(response.token);
-                        Auth.setUser(response.user);
-                    } else {
-                        localStorage.setItem('authToken', response.token);
-                        sessionStorage.setItem('userData', JSON.stringify(response.user));
-                    }
-                    
-                    // Save for compatibility
-                    localStorage.setItem('currentUserName', response.user.name || email.split('@')[0]);
-                    localStorage.setItem('accountType', response.user.role || role);
-                    
-                    // Show success message
-                    if (typeof Toast !== 'undefined') {
-                        Toast.success('تم تسجيل الدخول بنجاح');
-                    }
-                    
-                    // Redirect based on role
-                    setTimeout(() => {
-                        const userRole = response.user.role || role;
-                        if (userRole === 'educator' || userRole === 'parent') {
-                            window.location.href = '../../teacher_screens/Educator_1_Dashboard.html';
-                        } else {
-                            window.location.href = '../../student_screens/student_Progress_Dashboard.html';
-                        }
-                    }, 500);
-                }
-            } catch (error) {
-                // Hide loading state
-                if (typeof Loading !== 'undefined') {
-                    Loading.hide(submitBtn);
-                } else {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'دخول';
-                }
-                
-                // Show error message
-                const errorMessage = error.message || 'حدث خطأ في تسجيل الدخول. يرجى المحاولة مرة أخرى';
-                if (typeof Toast !== 'undefined') {
-                    Toast.error(errorMessage);
-                } else {
-                    alert(errorMessage);
-                }
+            // قبول أي إيميل وباسورد - Direct redirect بدون API
+            // تحديد الدور الحالي (إذا لم يكن محدد، افتراضي طالب)
+            const userRole = role === 'student' ? 'student' : (role || 'student');
+            
+            // إنشاء بيانات المستخدم الوهمية
+            const userName = email.split('@')[0] || 'طالب';
+            const mockUser = {
+                id: 'mock-user-' + Date.now(),
+                name: userRole === 'student' ? userName : userName,
+                email: email,
+                role: userRole
+            };
+            
+            // حفظ بيانات المصادقة
+            if (typeof Auth !== 'undefined') {
+                Auth.setToken('mock-token-for-testing-' + Date.now());
+                Auth.setUser(mockUser);
+            } else {
+                localStorage.setItem('authToken', 'mock-token-for-testing-' + Date.now());
+                sessionStorage.setItem('userData', JSON.stringify(mockUser));
+                sessionStorage.setItem('isAuthenticated', 'true');
             }
+            
+            localStorage.setItem('currentUserName', mockUser.name);
+            localStorage.setItem('accountType', userRole);
+            
+            // Show success message
+            if (typeof Toast !== 'undefined') {
+                Toast.success('تم تسجيل الدخول بنجاح');
+            }
+            
+            // التوجيه بناءً على الدور
+            setTimeout(() => {
+                const currentPath = window.location.pathname;
+                const isProduction = currentPath.includes('/frontend/') || 
+                                    (window.location.hostname !== 'localhost' && 
+                                     window.location.hostname !== '127.0.0.1');
+                
+                if (userRole === 'student') {
+                    // توجيه الطلاب إلى لوحة التقدم
+                    if (isProduction) {
+                        window.location.href = '/student_screens/student_Progress_Dashboard.html';
+                    } else {
+                        window.location.href = '../../student_screens/student_Progress_Dashboard.html';
+                    }
+                } else {
+                    // توجيه المربين إلى لوحة المربي
+                    if (isProduction) {
+                        window.location.href = '/teacher_screens/Educator_1_Dashboard.html';
+                    } else {
+                        window.location.href = '../../teacher_screens/Educator_1_Dashboard.html';
+                    }
+                }
+            }, 500);
         });
     </script>
 </body>
