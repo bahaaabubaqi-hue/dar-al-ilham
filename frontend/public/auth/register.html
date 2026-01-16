@@ -158,77 +158,41 @@
                 submitBtn.innerHTML = 'جاري إنشاء الحساب...';
             }
             
-            // Check if API is available
-            if (typeof API === 'undefined') {
-                if (typeof Loading !== 'undefined') {
-                    Loading.hide(submitBtn);
-                } else {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'إنشاء حساب ولي أمر';
-                }
-                alert('خطأ: API غير متاح. يرجى تحديث الصفحة.');
-                return;
+            // Skip API call - Direct redirect without authentication
+            // Save mock data for testing
+            const mockUser = {
+                id: 'mock-user-id',
+                name: name,
+                email: email,
+                role: 'parent'
+            };
+            
+            if (typeof Auth !== 'undefined') {
+                Auth.setToken('mock-token-for-testing');
+                Auth.setUser(mockUser);
+            } else {
+                localStorage.setItem('authToken', 'mock-token-for-testing');
+                sessionStorage.setItem('userData', JSON.stringify(mockUser));
+                sessionStorage.setItem('isAuthenticated', 'true');
             }
             
-            try {
-                // Call API
-                const response = await API.register({
-                    name,
-                    email,
-                    password,
-                    phone: phone || undefined,
-                    role: 'parent'
-                });
-                
-                if (response.success) {
-                    // Save token and user data
-                    if (typeof Auth !== 'undefined') {
-                        Auth.setToken(response.token);
-                        Auth.setUser(response.user);
-                    } else {
-                        localStorage.setItem('authToken', response.token);
-                        sessionStorage.setItem('userData', JSON.stringify(response.user));
-                    }
-                    
-                    // Save for compatibility
-                    localStorage.setItem('currentUserName', response.user.name || name);
-                    localStorage.setItem('accountType', 'parent');
-                    
-                    // Show success message
-                    if (typeof Toast !== 'undefined') {
-                        Toast.success('تم إنشاء الحساب بنجاح');
-                    }
-                    
-                    // Redirect
-                    setTimeout(() => {
-                        // Use path that works in both dev and production
-                        const currentPath = window.location.pathname;
-                        if (currentPath.includes('/frontend/') || window.location.hostname !== 'localhost') {
-                            // Production or served from /frontend/
-                            window.location.href = '/teacher_screens/Educator_1_Dashboard.html';
-                        } else {
-                            // Local development
-                            window.location.href = '../../teacher_screens/Educator_1_Dashboard.html';
-                        }
-                    }, 500);
-                }
-            } catch (error) {
-                // Hide loading state
-                if (typeof Loading !== 'undefined') {
-                    Loading.hide(submitBtn);
-                } else {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'إنشاء حساب ولي أمر';
-                }
-                
-                // Show error message
-                const errorMessage = error.message || 'حدث خطأ في إنشاء الحساب. يرجى المحاولة مرة أخرى';
-                if (typeof Toast !== 'undefined') {
-                    Toast.error(errorMessage);
-                } else {
-                    alert(errorMessage);
-                }
+            localStorage.setItem('currentUserName', name);
+            localStorage.setItem('accountType', 'parent');
+            
+            // Show success message
+            if (typeof Toast !== 'undefined') {
+                Toast.success('تم إنشاء الحساب بنجاح');
             }
+            
+            // Redirect directly to teacher/parent dashboard
+            setTimeout(() => {
+                const currentPath = window.location.pathname;
+                if (currentPath.includes('/frontend/') || window.location.hostname !== 'localhost') {
+                    window.location.href = '/teacher_screens/Educator_1_Dashboard.html';
+                } else {
+                    window.location.href = '../../teacher_screens/Educator_1_Dashboard.html';
+                }
+            }, 500);
         });
 
         // Handle Student Registration
@@ -270,78 +234,41 @@
                 submitBtn.innerHTML = 'جاري إنشاء الحساب...';
             }
             
-            // Check if API is available
-            if (typeof API === 'undefined') {
-                if (typeof Loading !== 'undefined') {
-                    Loading.hide(submitBtn);
-                } else {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'إنشاء حساب طالب';
-                }
-                alert('خطأ: API غير متاح. يرجى تحديث الصفحة.');
-                return;
+            // Skip API call - Direct redirect without authentication
+            // Save mock data for testing
+            const mockUser = {
+                id: 'mock-user-id',
+                name: name,
+                email: email,
+                role: 'student'
+            };
+            
+            if (typeof Auth !== 'undefined') {
+                Auth.setToken('mock-token-for-testing');
+                Auth.setUser(mockUser);
+            } else {
+                localStorage.setItem('authToken', 'mock-token-for-testing');
+                sessionStorage.setItem('userData', JSON.stringify(mockUser));
+                sessionStorage.setItem('isAuthenticated', 'true');
             }
             
-            try {
-                // Call API
-                const response = await API.register({
-                    name,
-                    email,
-                    password,
-                    role: 'student',
-                    age,
-                    level
-                });
-                
-                if (response.success) {
-                    // Save token and user data
-                    if (typeof Auth !== 'undefined') {
-                        Auth.setToken(response.token);
-                        Auth.setUser(response.user);
-                    } else {
-                        localStorage.setItem('authToken', response.token);
-                        sessionStorage.setItem('userData', JSON.stringify(response.user));
-                    }
-                    
-                    // Save for compatibility
-                    localStorage.setItem('currentUserName', response.user.name || name);
-                    localStorage.setItem('accountType', 'student');
-                    
-                    // Show success message
-                    if (typeof Toast !== 'undefined') {
-                        Toast.success('تم إنشاء الحساب بنجاح');
-                    }
-                    
-                    // Redirect
-                    setTimeout(() => {
-                        // Use path that works in both dev and production
-                        const currentPath = window.location.pathname;
-                        if (currentPath.includes('/frontend/') || window.location.hostname !== 'localhost') {
-                            // Production or served from /frontend/
-                            window.location.href = '/student_screens/student_Progress_Dashboard.html';
-                        } else {
-                            // Local development
-                            window.location.href = '../../student_screens/student_Progress_Dashboard.html';
-                        }
-                    }, 500);
-                }
-            } catch (error) {
-                // Hide loading state
-                if (typeof Loading !== 'undefined') {
-                    Loading.hide(submitBtn);
-                } else {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'إنشاء حساب طالب';
-                }
-                
-                // Show error message
-                const errorMessage = error.message || 'حدث خطأ في إنشاء الحساب. يرجى المحاولة مرة أخرى';
-                if (typeof Toast !== 'undefined') {
-                    Toast.error(errorMessage);
-                } else {
-                    alert(errorMessage);
-                }
+            localStorage.setItem('currentUserName', name);
+            localStorage.setItem('accountType', 'student');
+            
+            // Show success message
+            if (typeof Toast !== 'undefined') {
+                Toast.success('تم إنشاء الحساب بنجاح');
             }
+            
+            // Redirect directly to student page
+            setTimeout(() => {
+                const currentPath = window.location.pathname;
+                if (currentPath.includes('/frontend/') || window.location.hostname !== 'localhost') {
+                    window.location.href = '/student_screens/student_Progress_Dashboard.html';
+                } else {
+                    window.location.href = '../../student_screens/student_Progress_Dashboard.html';
+                }
+            }, 500);
         });
     </script>
 </body>

@@ -160,10 +160,12 @@ const API = {
         const hostname = window.location.hostname;
         const protocol = window.location.protocol;
         const port = window.location.port;
+        const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '';
         
         // إذا كان على localhost (التطوير)
-        if (hostname === 'localhost' || hostname === '127.0.0.1') {
-            return `http://localhost:${port || '5000'}`;
+        if (isLocalhost) {
+            // دائماً استخدم المنفذ 5000 في التطوير
+            return 'http://localhost:5000';
         }
         
         // في الإنتاج، استخدم نفس الدومين (نفس Port)
